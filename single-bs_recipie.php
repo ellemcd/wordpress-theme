@@ -55,6 +55,27 @@
 					<?php sweet_recipes_ingredients_details(); ?>
 
 
+
+					<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+					<div class="col-lg-4">
+						<?php while (have_rows('page-slider')) : the_row(); ?>
+
+							<div class="carousel-item <?php if(get_row_index() == 1) echo 'active'; ?>">
+							<?php
+								$image = get_sub_field('image');
+								$image_url = $image['sizes']['large'];
+							?>
+								<img src="<?php echo $image_url; ?>" class="d-block w-100">
+							</div>
+
+						<?php endwhile; ?>
+						</div>
+						</div>
+
+					</div>
+
+
                 </div>
 
                 <footer class="entry-footer clear-both">

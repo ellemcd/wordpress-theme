@@ -65,6 +65,33 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 endif;
 // Prep/Cooking/Servings  End
 
+
+if (!function_exists('sweet_recipes_slider')) {
+	function sweet_recipes_slider() {
+		// bail if ACF is not installed/activated, as we won't have a movie gallery to show anyway 😝
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		?>
+			<div class="carousel-inner">
+
+		<?php while (have_rows('page-slider')) : the_row(); ?>
+			<div class="carousel-item <?php if(get_row_index() == 1) echo 'active'; ?>">
+			<?php
+				$image = get_sub_field('image');
+				$image_url = $image['sizes']['large'];
+			?>
+				<img src="<?php echo $image_url; ?>" class="d-block w-25">
+			</div>
+		<?php endwhile; ?>
+
+			</div>
+
+		<?php
+	}
+}
+
 // Ingridients
 if (!function_exists('sweet_recipes_ingredients_details')) {
 	function sweet_recipes_ingredients_details() {
@@ -104,7 +131,7 @@ if (!function_exists('sweet_recipes_instructions')) {
 		if (have_rows('recipe-instructions')) {
 			// yes we have at least one row of sub-fields to show!
 
-			echo '<ol>';
+			echo '<ol class="recipe-instructions">';
 			while (have_rows('recipe-instructions')) {
 				the_row();
 

@@ -11875,21 +11875,19 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-ol {
+.recipe-instructions {
   list-style: none;
   counter-reset: my-awesome-counter;
   margin: 0;
   padding: 0;
 }
-
-ol li {
+.recipe-instructions li {
   counter-increment: my-awesome-counter;
   display: flex;
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
 }
-
-ol li::before {
+.recipe-instructions li::before {
   content: counter(my-awesome-counter);
   font-weight: bold;
   font-size: 2rem;
