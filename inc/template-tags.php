@@ -45,7 +45,7 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 					);
 				}
 
-				if (!empty($cooking_time)) {
+				if (!empty($servings)) {
 
 					printf ('<div class="badge bg-warning ms-2">%s</div>',
 						sprintf(
@@ -65,9 +65,7 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 endif;
 // Prep/Cooking/Servings  End
 
-
 // Ingridients
-
 if (!function_exists('sweet_recipes_ingredients_details')) {
 	function sweet_recipes_ingredients_details() {
 		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝

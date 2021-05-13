@@ -6,7 +6,7 @@
 
 	 get_header();  ?>
 
-<div id="content" class="site-content">
+<div id="content" class="site-content <?php if (!has_post_thumbnail()): ?>py-5 mt-4<?php endif; ?>">
     <div id="primary" class="content-area">
 
         <!-- Hook to add something nice -->
@@ -17,11 +17,19 @@
             <header class="entry-header">
                 <?php the_post(); ?>
                 <!-- Featured Image-->
-                <div class="height-75 bg-dark text-light align-items-end dflex mb-3" <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?> <div id="featured-full-image" class="page-full-image" style="background-image: url('<?php echo $thumb['0'];?>')">
+				<?php if (has_post_thumbnail()): ?>
 
-                    <div class="container align-items-end d-flex h-100 pb-3">
-                        <?php the_title('<h1>', '</h1>'); ?>
-                    </div>
+					<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?>
+
+					<div class="height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: url('<?php echo $thumb['0']; ?>;'); background-position: center;">
+						<div class="container align-items-end justify-content-between d-flex h-100 pb-3">
+							<?php the_title('<h1>', '</h1>'); ?>
+							<div class="h4">
+								<?php sweet_recipes_details(); ?>
+							</div>
+						</div>
+					</div>
+				<?php endif; ?>
 
             </header>
 
@@ -29,20 +37,20 @@
 
                 <div class="entry-content">
 
+					<?php if (!has_post_thumbnail()): ?>
+						<?php the_title('<h1>', '</h1>'); ?>
+					<?php endif; ?>
+
                     <?php bootscore_category_badge(); ?>
 
                     <p class="entry-meta">
                         <small class="text-muted">
-                            <?php
-							     bootscore_date();
-							     _e(' by ', 'bootscore'); the_author_posts_link();
-							     bootscore_comment_count();
-				            ?>
+
                         </small>
                     </p>
 
 
-                    <?php the_content(); ?>
+					<?php the_content(); ?>
 					<?php sweet_recipes_instructions(); ?>
 					<?php sweet_recipes_ingredients_details(); ?>
 
