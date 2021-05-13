@@ -8,6 +8,76 @@
  */
 
 
+ // Time Prep/Cooking Badge
+if ( ! function_exists( 'sweet_recipes_details' ) ) :
+	function sweet_recipes_details() {
+
+		// Bail  if ACF is not installed/activated.
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		// Check rows exists.
+		if ( have_rows('time_details') ):
+			// Loop through rows.
+			while( have_rows('time_details') ) : the_row();
+
+				// Load sub field value.
+				$prep_time = get_sub_field('prep_time');
+				$cooking_time = get_sub_field('cooking_time');
+
+				printf('<div class="badge bg-success mb-2">%s</div>',
+					sprintf(
+						__('%s mins', 'bootscore'),
+						$prep_time
+					)
+				);
+
+				if (!empty($cooking_time)) {
+
+					printf ('<div class="badge bg-info ms-2">%s</div>',
+						sprintf(
+							__('%s mins', 'bootscore'),
+							$cooking_time
+						)
+					);
+				}
+
+			// End loop.
+			endwhile;
+
+		endif;
+
+	}
+
+endif;
+// Time Prep/Cooking Badge End
+
+ // Time Prep/Cooking Badge
+ if ( ! function_exists( 'sweet_recipes_serving_details' ) ) :
+	function sweet_recipes_serving_details() {
+
+		// Bail  if ACF is not installed/activated.
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+			$servings = get_field('servings');
+
+			printf('<dt>%s</dt>',
+				sprintf(
+					__('Servings %s', 'bootscore'),
+					$servings
+				)
+			);
+
+	}
+
+endif;
+// Time Prep/Cooking Badge End
+
+
+
 // Category Badge
 if ( ! function_exists( 'bootscore_category_badge' ) ) :
 	function bootscore_category_badge() {
@@ -21,7 +91,7 @@ if ( ! function_exists( 'bootscore_category_badge' ) ) :
 						    $thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="badge bg-secondary">' . $category->name.'</a>';
 						    $i++;
             }
-            echo $thelist;	
+            echo $thelist;
             echo '</div>';
 		}
 	}
@@ -38,8 +108,8 @@ if ( ! function_exists( 'bootscore_category' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'bootscore' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links"></span>', $categories_list ); // WPCS: XSS OK.	
-			}		
+				printf( '<span class="cat-links"></span>', $categories_list ); // WPCS: XSS OK.
+			}
 		}
 	}
 endif;
@@ -119,7 +189,7 @@ if ( ! function_exists( 'bootscore_comments' ) ) :
 			);
 			echo '</span>';
 		}
-	
+
 	}
 endif;
 // Comments End
@@ -151,7 +221,7 @@ if ( ! function_exists( 'bootscore_edit' ) ) :
 	}
 endif;
 // Edit Link End
-		
+
 
 // Single Comments Count
 if ( ! function_exists( 'bootscore_comment_count' ) ) :
@@ -260,7 +330,7 @@ if ( ! function_exists( 'bootscore_ie_alert' ) ) :
                     </div>
                ';
             }
-        
+
 	}
 endif;
 

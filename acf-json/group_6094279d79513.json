@@ -1,0 +1,45 @@
+{
+    "key": "group_6094279d79513",
+    "title": "Recipe Details",
+    "fields": [
+        {
+            "key": "field_60943cdf56c3a",
+            "label": "Servings",
+            "name": "servings",
+            "type": "number",
+            "instructions": "How many servings are includes this recipe?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": 8,
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "bs_recipie"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1620328571
+}
