@@ -8,7 +8,7 @@
  */
 
 
- // Time Prep/Cooking Badge
+ // Prep/Cooking/Servings  Badge
 if ( ! function_exists( 'sweet_recipes_details' ) ) :
 	function sweet_recipes_details() {
 
@@ -18,13 +18,15 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 		}
 
 		// Check rows exists.
-		if ( have_rows('time_details') ):
+		if ( have_rows('recipe_details') ):
 			// Loop through rows.
-			while( have_rows('time_details') ) : the_row();
+			while( have_rows('recipe_details') ) : the_row();
 
 				// Load sub field value.
 				$prep_time = get_sub_field('prep_time');
 				$cooking_time = get_sub_field('cooking_time');
+				$servings = get_sub_field('servings');
+
 
 				printf('<div class="badge bg-success mb-2">%s</div>',
 					sprintf(
@@ -43,6 +45,16 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 					);
 				}
 
+				if (!empty($cooking_time)) {
+
+					printf ('<div class="badge bg-warning ms-2">%s</div>',
+						sprintf(
+							__('%s servings', 'bootscore'),
+							$servings
+						)
+					);
+				}
+
 			// End loop.
 			endwhile;
 
@@ -51,30 +63,62 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 	}
 
 endif;
-// Time Prep/Cooking Badge End
+// Prep/Cooking/Servings  End
 
- // Time Prep/Cooking Badge
- if ( ! function_exists( 'sweet_recipes_serving_details' ) ) :
-	function sweet_recipes_serving_details() {
 
-		// Bail  if ACF is not installed/activated.
+// Ingridients
+
+if (!function_exists('sweet_recipes_ingredients_details')) {
+	function sweet_recipes_ingredients_details() {
+		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
 		if (!function_exists('get_field')) {
 			return;
 		}
 
-			$servings = get_field('servings');
+		if (have_rows('ingredients-details')) {
+			// yes we have at least one row of sub-fields to show!
 
-			printf('<dt>%s</dt>',
-				sprintf(
-					__('Servings %s', 'bootscore'),
-					$servings
-				)
-			);
+			echo '<ol class="list-group">';
+			while (have_rows('ingredients-details')) {
+				the_row();
 
+				$quantity = get_sub_field('quantity');
+				$measures = get_sub_field('measures');
+				$ingredient = get_sub_field('ingredient');
+
+				printf('<li class="list-group-item">%s %s %s</li> ', $quantity, $measures, $ingredient);
+			}
+			echo '</ol>';
+		}
 	}
+}
 
-endif;
-// Time Prep/Cooking Badge End
+// Ingredients End
+
+// Instructions
+if (!function_exists('sweet_recipes_instructions')) {
+	function sweet_recipes_instructions() {
+		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		if (have_rows('recipe-instructions')) {
+			// yes we have at least one row of sub-fields to show!
+
+			echo '<ol>';
+			while (have_rows('recipe-instructions')) {
+				the_row();
+
+				$instructions = get_sub_field('instructions');
+
+				printf('<li>%s</li> ', $instructions);
+			}
+			echo '</ol>';
+		}
+	}
+}
+// Instructions End
 
 
 

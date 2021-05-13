@@ -1,77 +1,14 @@
 {
     "key": "group_60943c81e56f8",
-    "title": "Recipes Content",
+    "title": "Recipe Content",
     "fields": [
-        {
-            "key": "field_6094282226ea7",
-            "label": "Time Details",
-            "name": "time_details",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_6094295fb83c4",
-                    "label": "Prep Time",
-                    "name": "prep_time",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "minutes",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                },
-                {
-                    "key": "field_609429adb83c5",
-                    "label": "Cooking Time",
-                    "name": "cooking_time",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "minutes",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                }
-            ]
-        },
         {
             "key": "field_60942bf7f1982",
             "label": "Ingredients Details",
             "name": "ingredients-details",
             "type": "repeater",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -135,8 +72,8 @@
                 },
                 {
                     "key": "field_60942ca250371",
-                    "label": "Ingredients",
-                    "name": "ingredients",
+                    "label": "Ingredient",
+                    "name": "ingredient",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
@@ -160,7 +97,7 @@
             "name": "recipe-instructions",
             "type": "repeater",
             "instructions": "Put each instruction in different row.",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -171,14 +108,14 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "",
+            "button_label": "Add instruction",
             "sub_fields": [
                 {
-                    "key": "field_609ce74c99f11",
-                    "label": "Titel for Instructions",
-                    "name": "titel_for_instructions",
-                    "type": "text",
-                    "instructions": "Titel for the specific instructions. Does your recipie require different instructions for two or more steps, use this to distinguish with different titles.",
+                    "key": "field_609d0e12706d4",
+                    "label": "Instructions",
+                    "name": "instructions",
+                    "type": "textarea",
+                    "instructions": "Write instructions for this recipe. Use a new row for each step.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -188,45 +125,9 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_60942e0aec65e",
-                    "label": "Instructions",
-                    "name": "instructions",
-                    "type": "group",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_609ce9b00966d",
-                            "label": "Instructions",
-                            "name": "instructions",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": 4,
-                            "new_lines": ""
-                        }
-                    ]
+                    "maxlength": "",
+                    "rows": 2,
+                    "new_lines": ""
                 }
             ]
         }
@@ -248,5 +149,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620896208
+    "modified": 1620910442
 }

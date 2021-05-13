@@ -43,6 +43,8 @@
 
 
                     <?php the_content(); ?>
+					<?php sweet_recipes_instructions(); ?>
+					<?php sweet_recipes_ingredients_details(); ?>
 
 
                 </div>
