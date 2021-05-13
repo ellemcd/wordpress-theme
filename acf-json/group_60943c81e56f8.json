@@ -174,12 +174,12 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_60942e0aec65e",
-                    "label": "Instructions",
-                    "name": "instructions",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 1,
+                    "key": "field_609ce74c99f11",
+                    "label": "Titel for Instructions",
+                    "name": "titel_for_instructions",
+                    "type": "text",
+                    "instructions": "Titel for the specific instructions. Does your recipie require different instructions for two or more steps, use this to distinguish with different titles.",
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -188,9 +188,45 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "maxlength": "",
-                    "rows": 6,
-                    "new_lines": "wpautop"
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_60942e0aec65e",
+                    "label": "Instructions",
+                    "name": "instructions",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_609ce9b00966d",
+                            "label": "Instructions",
+                            "name": "instructions",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
+                        }
+                    ]
                 }
             ]
         }
@@ -212,5 +248,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620328458
+    "modified": 1620896208
 }
