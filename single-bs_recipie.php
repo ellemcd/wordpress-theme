@@ -23,9 +23,9 @@
 
 					<div class="recipes-header height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.7805497198879552) 0%, rgba(0,0,0,0.4500175070028011) 34%, rgba(255,255,255,0) 87%), url('<?php echo $thumb['0']; ?>;'); background-position: center bottom;">
 						<div class="container align-items-end justify-content-between d-flex h-100 pb-3">
-							<?php the_title('<h1>', '</h1>'); ?>
-							<div class="h4">
-								<?php sweet_recipes_details(); ?>
+							<?php the_title('<h2>', '</h2>'); ?>
+							<div class="h5">
+								<?php sweet_recipes_servings(); ?>
 							</div>
 						</div>
 					</div>
@@ -41,37 +41,46 @@
 						<?php the_title('<h1>', '</h1>'); ?>
 					<?php endif; ?>
 
-                    <?php bootscore_category_badge(); ?>
-
-                    <p class="entry-meta">
+                    <p class="entry-meta categories">
                         <small class="text-muted">
-						Test
+							<?php bootscore_movie_genre_badge(); ?>
                         </small>
                     </p>
 
 					<div class="row">
-						<div class="col-6">
+						<div class="col-lg-6 mb-4">
 							<?php the_content(); ?>
 						</div>
-						<div class="col-6">
-							<?php sweet_recipes_details(); ?>
+						<div class="col-lg-6 mb-4 d-flex justify-content-evenly">
+							<?php sweet_recipes_prep_time(); ?>
+							<?php sweet_recipes_cooking_time(); ?>
 						</div>
 					</div>
 
-
 					<?php sweet_recipes_image(); ?>
 
-					<?php sweet_recipes_instructions(); ?>
-					<?php sweet_recipes_ingredients_details(); ?>
-
-
+					<div class="row">
+						<div class="col">
+							<?php sweet_recipes_ingredients_details(); ?>
+						</div>
+					</div>
 
                 </div>
 
                 <footer class="entry-footer clear-both">
-                    <div class="mb-4">
-                        <?php bootscore_tags(); ?>
-                    </div>
+
+					<div class="row d-flex flex-row-reverse">
+						<div class="col">
+							<h4 class="border-bottom border-3 border-info ms-2"><?php _e('Instructions','bootscore')?></h4>
+								<?php sweet_recipes_instructions(); ?>
+						</div>
+
+						<div class="mb-4">
+							<?php bootscore_tags(); ?>
+						</div>
+
+					</div>
+
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             <li class="page-item">

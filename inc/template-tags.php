@@ -8,9 +8,9 @@
  */
 
 
- // Prep/Cooking/Servings  Badge
-if ( ! function_exists( 'sweet_recipes_details' ) ) :
-	function sweet_recipes_details() {
+ // Prep Time
+if ( ! function_exists( 'sweet_recipes_prep_time' ) ) :
+	function sweet_recipes_prep_time() {
 
 		// Bail  if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
@@ -24,30 +24,82 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 
 				// Load sub field value.
 				$prep_time = get_sub_field('prep_time');
+
+				// Prep Time
+				if(!empty($prep_time)){
+					printf( __('<dl><dd class="mb-0">Prep Time:</dd><dt>%s</dt></dl>','bootscore'),
+						sprintf(
+							__('%s mins', 'bootscore'),
+							$prep_time
+						)
+					);
+				} else {
+					echo '<dl><dd class="mb-0">Prep Time:</dd><dt>-</dt></dl>';
+				}
+
+			// End loop.
+			endwhile;
+		endif;
+	}
+endif;
+// Prep Time End
+
+ // Cooking Time
+ if ( ! function_exists( 'sweet_recipes_cooking_time' ) ) :
+	function sweet_recipes_cooking_time() {
+
+		// Bail  if ACF is not installed/activated.
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		// Check rows exists.
+		if ( have_rows('recipe_details') ):
+			// Loop through rows.
+			while( have_rows('recipe_details') ) : the_row();
+
+				// Load sub field value.
 				$cooking_time = get_sub_field('cooking_time');
-				$servings = get_sub_field('servings');
 
-
-				printf('<div class="badge bg-success mb-2">%s</div>',
-					sprintf(
-						__('%s mins', 'bootscore'),
-						$prep_time
-					)
-				);
-
-				if (!empty($cooking_time)) {
-
-					printf ('<div class="badge bg-info ms-2">%s</div>',
+				// Cooking Time
+				if(!empty($cooking_time)){
+					printf( __('<dl><dd class="mb-0">Cooking Time:</dd><dt>%s</dt></dl>','bootscore'),
 						sprintf(
 							__('%s mins', 'bootscore'),
 							$cooking_time
 						)
 					);
+				} else {
+					echo '<dl><dd class="mb-0">Cooking Time:</dd><dt>-</dt></dl>';
 				}
 
-				if (!empty($servings)) {
+			// End loop.
+			endwhile;
+		endif;
+	}
+endif;
+// Cooking Time End
 
-					printf ('<div class="badge bg-warning ms-2">%s</div>',
+ // Prep Time
+ if ( ! function_exists( 'sweet_recipes_servings' ) ) :
+	function sweet_recipes_servings() {
+
+		// Bail  if ACF is not installed/activated.
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		// Check rows exists.
+		if ( have_rows('recipe_details') ):
+			// Loop through rows.
+			while( have_rows('recipe_details') ) : the_row();
+
+				// Load sub field value.
+				$servings = get_sub_field('servings');
+
+				// Prep Time
+				if (!empty($servings)) {
+					printf ('<div class="border-bottom border-3 border-info ms-2">%s</div>',
 						sprintf(
 							__('%s servings', 'bootscore'),
 							$servings
@@ -57,13 +109,10 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 
 			// End loop.
 			endwhile;
-
 		endif;
-
 	}
-
 endif;
-// Prep/Cooking/Servings  End
+// Prep Time End
 
 // Photo
 if (!function_exists('sweet_recipes_image')) {
@@ -83,7 +132,7 @@ if (!function_exists('sweet_recipes_image')) {
 		$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'medium_large');
 		// dump($img);
 		// dump($img_srcset);
-		printf('<img src="%s" srcset="%s" class="w-50 ms-3 mb-3 float-end img-fluid">', $img[0], $img_srcset);
+		printf('<img src="%s" srcset="%s" class="w-50 me-3 mb-3 float-start img-fluid">', $img[0], $img_srcset);
 	}
 }
 // Photo End
@@ -99,7 +148,7 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 		if (have_rows('ingredients-details')) {
 			// yes we have at least one row of sub-fields to show!
 
-			echo '<ol class="list-group">';
+			echo'<div class="row"><div class="col"><ol class="list-group">';
 			while (have_rows('ingredients-details')) {
 				the_row();
 
@@ -109,12 +158,57 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 
 				printf('<li class="list-group-item">%s %s %s</li> ', $quantity, $measures, $ingredient);
 			}
-			echo '</ol>';
+			echo '</ol></div></div>';
 		}
 	}
 }
 
 // Ingredients End
+
+// Movie Genre Badge
+if ( ! function_exists( 'bootscore_movie_genre_badge' ) ) :
+	function bootscore_movie_genre_badge() {
+		// get all movie genres for the current post
+		$categories = get_the_terms(get_the_ID(), 'bs_recipie_category');
+
+		// bail if no movie genres exist for this post
+		if (!$categories) {
+			return;
+		}
+
+		echo '<div class="mb-2">';
+		$badges = [];
+
+		// loop over all genres and construct a HTML-link for each of them
+		foreach ($categories as $category) {
+			// get URL to the archive page for $genre
+			$category_url = get_term_link($category, 'bs_recipie_category');
+
+			// create anchor link
+			$category= sprintf(
+				'<em"><a href="%s" class="categories">%s</a></em>',
+				$category_url,
+				$category->name
+			);
+
+			// add anchor link to list of genre badges
+			array_push($badges, $category);
+		}
+
+		// output badges with a space between them
+		echo implode(' ', $badges);
+
+		echo '</div>';
+	}
+endif;
+// Category Badge End
+
+
+
+
+
+
+
 
 // Instructions
 if (!function_exists('sweet_recipes_instructions')) {
@@ -140,8 +234,6 @@ if (!function_exists('sweet_recipes_instructions')) {
 	}
 }
 // Instructions End
-
-
 
 // Category Badge
 if ( ! function_exists( 'bootscore_category_badge' ) ) :

@@ -13,10 +13,7 @@ $args = array(
 	'order'    => 'ASC'
 );
 
-
 $the_query = new WP_Query($args);
-
-
 
 get_header();
 ?>
@@ -32,17 +29,23 @@ get_header();
 			<header class="entry-header">
 				<?php the_post(); ?>
 
-				<div class="height-75 bg-dark text-light align-items-end dflex mb-3" <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?> <div id="featured-full-image" class"page-full-image" style="background-image: url('<?php echo $thumb['0']; ?>')">
-					<div class="container align-items-end d-flex h-100 pb-3">
+				<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?>
 
-						<?php the_title('<h1>', '</h1>'); ?>
+				<div class="height-50 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.7805497198879552) 0%, rgba(0,0,0,0.4500175070028011) 34%, rgba(255,255,255,0) 97%), url('<?php echo $thumb['0']; ?>;'); background-position: center center; background-size: cover;">
+					<div class="container h-100 d-flex align-items-center justify-content-center">
+						<?php the_title('<h1 class="header-text">', '</h1>'); ?>
 					</div>
 			</header>
 
 			<div class="container pb-5">
 
-
 				<div class="entry-content">
+
+					<p class="entry-meta text-center">
+						<small class="text-muted">
+							/ / / / Here we will show categories in text justify / / /
+						</small>
+					</p>
 
 					<div class="row" data-masonry='{"percentPosition": true }'>
 
@@ -114,7 +117,6 @@ get_header();
 						<?php endif; ?>
 
 					</div><!-- row -->
-
 
 					<?php the_content(); ?>
 
