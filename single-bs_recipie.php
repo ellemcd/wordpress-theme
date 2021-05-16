@@ -21,7 +21,7 @@
 
 					<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?>
 
-					<div class="height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: url('<?php echo $thumb['0']; ?>;'); background-position: center;">
+					<div class="recipes-header height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.32396708683473385) 0%, rgba(0,0,0,0.07326680672268904) 81%, rgba(255,255,255,0.13629201680672265) 100%), url('<?php echo $thumb['0']; ?>;'); background-position: center;">
 						<div class="container align-items-end justify-content-between d-flex h-100 pb-3">
 							<?php the_title('<h1>', '</h1>'); ?>
 							<div class="h4">
@@ -50,30 +50,12 @@
                     </p>
 
 
+					<?php sweet_recipes_image(); ?>
 					<?php the_content(); ?>
+
 					<?php sweet_recipes_instructions(); ?>
 					<?php sweet_recipes_ingredients_details(); ?>
 
-
-
-					<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-inner">
-					<div class="col-lg-4">
-						<?php while (have_rows('page-slider')) : the_row(); ?>
-
-							<div class="carousel-item <?php if(get_row_index() == 1) echo 'active'; ?>">
-							<?php
-								$image = get_sub_field('image');
-								$image_url = $image['sizes']['large'];
-							?>
-								<img src="<?php echo $image_url; ?>" class="d-block w-100">
-							</div>
-
-						<?php endwhile; ?>
-						</div>
-						</div>
-
-					</div>
 
 
                 </div>

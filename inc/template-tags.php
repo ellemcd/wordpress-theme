@@ -65,32 +65,28 @@ if ( ! function_exists( 'sweet_recipes_details' ) ) :
 endif;
 // Prep/Cooking/Servings  End
 
-
-if (!function_exists('sweet_recipes_slider')) {
-	function sweet_recipes_slider() {
-		// bail if ACF is not installed/activated, as we won't have a movie gallery to show anyway 😝
+// Photo
+if (!function_exists('sweet_recipes_image')) {
+	function sweet_recipes_image() {
+		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
 		if (!function_exists('get_field')) {
 			return;
 		}
 
-		?>
-			<div class="carousel-inner">
+		$image = get_field('image');
+		// dump($image);
+		if (!$image) {
+			return;
+		}
 
-		<?php while (have_rows('page-slider')) : the_row(); ?>
-			<div class="carousel-item <?php if(get_row_index() == 1) echo 'active'; ?>">
-			<?php
-				$image = get_sub_field('image');
-				$image_url = $image['sizes']['large'];
-			?>
-				<img src="<?php echo $image_url; ?>" class="d-block w-25">
-			</div>
-		<?php endwhile; ?>
-
-			</div>
-
-		<?php
+		$img = wp_get_attachment_image_src($image['ID'], 'medium_large');
+		$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'medium_large');
+		// dump($img);
+		// dump($img_srcset);
+		printf('<img src="%s" srcset="%s" class="w-50 ms-3 mb-3 float-end img-fluid">', $img[0], $img_srcset);
 	}
 }
+// Photo End
 
 // Ingridients
 if (!function_exists('sweet_recipes_ingredients_details')) {

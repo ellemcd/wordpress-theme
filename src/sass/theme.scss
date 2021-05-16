@@ -2,16 +2,18 @@
  * Theme Styles
  */
 
-// import Bootstrap 5
+// Import Bootstrap 5
 @import 'bootstrap/bootstrap';
 
-// import BootScore 5 styles
+// Import BootScore 5 styles
 @import 'bootscore-5';
 
 // Import offcanvas
-@import 'bootstrap/offcanvas';
+@import 'offcanvas';
 
+// Import list styles
 @import 'list-styles';
 
+@import 'single-recipe';
 
 

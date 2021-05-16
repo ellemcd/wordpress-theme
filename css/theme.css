@@ -11895,3 +11895,15 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
   font-family: "Abril Fatface", serif;
   line-height: 1;
 }
+
+.recipes-header {
+  flex: 1 0 auto;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  padding: 30px 0;
+}
