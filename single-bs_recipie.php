@@ -21,7 +21,7 @@
 
 					<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?>
 
-					<div class="recipes-header height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.32396708683473385) 0%, rgba(0,0,0,0.07326680672268904) 81%, rgba(255,255,255,0.13629201680672265) 100%), url('<?php echo $thumb['0']; ?>;'); background-position: center;">
+					<div class="recipes-header height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.7805497198879552) 0%, rgba(0,0,0,0.4500175070028011) 34%, rgba(255,255,255,0) 87%), url('<?php echo $thumb['0']; ?>;'); background-position: center bottom;">
 						<div class="container align-items-end justify-content-between d-flex h-100 pb-3">
 							<?php the_title('<h1>', '</h1>'); ?>
 							<div class="h4">
@@ -45,13 +45,21 @@
 
                     <p class="entry-meta">
                         <small class="text-muted">
-
+						Test
                         </small>
                     </p>
 
+					<div class="row">
+						<div class="col-6">
+							<?php the_content(); ?>
+						</div>
+						<div class="col-6">
+							<?php sweet_recipes_details(); ?>
+						</div>
+					</div>
+
 
 					<?php sweet_recipes_image(); ?>
-					<?php the_content(); ?>
 
 					<?php sweet_recipes_instructions(); ?>
 					<?php sweet_recipes_ingredients_details(); ?>
