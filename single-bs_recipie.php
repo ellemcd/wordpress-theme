@@ -33,7 +33,7 @@
 
             </header>
 
-            <div class="container pb-5">
+            <div class="container single-page pb-5">
 
                 <div class="entry-content">
 
@@ -41,39 +41,42 @@
 						<?php the_title('<h1>', '</h1>'); ?>
 					<?php endif; ?>
 
-                    <p class="entry-meta categories">
+                    <p class="entry-meta">
                         <small class="text-muted">
-							<?php bootscore_movie_genre_badge(); ?>
+							<?php sweet_recipes_categories_badge(); ?>
                         </small>
                     </p>
-
-					<div class="row">
-						<div class="col-lg-6 mb-4">
-							<?php the_content(); ?>
+						<div class="row">
+							<div class="col-lg-6 mb-4">
+								<?php the_content(); ?>
+							</div>
+							<div class="col-lg-6 mb-4 d-flex justify-content-evenly">
+								<?php sweet_recipes_prep_time(); ?>
+								<?php sweet_recipes_cooking_time(); ?>
+							</div>
 						</div>
-						<div class="col-lg-6 mb-4 d-flex justify-content-evenly">
-							<?php sweet_recipes_prep_time(); ?>
-							<?php sweet_recipes_cooking_time(); ?>
-						</div>
-					</div>
 
-					<?php sweet_recipes_image(); ?>
 
-					<div class="row">
-						<div class="col">
-							<?php sweet_recipes_ingredients_details(); ?>
-						</div>
-					</div>
+					<?php if (empty(sweet_recipes_image())): ?>
+						<div class="col-12">
+							<h4 class="border-bottom border-3 border-info "><?php _e('Ingredients','bootscore')?></h4>
+								<?php sweet_recipes_ingredients_details(); ?>
+
+
+							<h4 class="border-bottom border-3 border-info mt-2"><?php _e('Instructions','bootscore')?></h4>
+									<?php sweet_recipes_instructions(); ?>
+							</div>
+
+
+					<?php endif; ?>
+
 
                 </div>
 
                 <footer class="entry-footer clear-both">
 
 					<div class="row d-flex flex-row-reverse">
-						<div class="col">
-							<h4 class="border-bottom border-3 border-info ms-2"><?php _e('Instructions','bootscore')?></h4>
-								<?php sweet_recipes_instructions(); ?>
-						</div>
+
 
 						<div class="mb-4">
 							<?php bootscore_tags(); ?>

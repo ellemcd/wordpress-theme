@@ -4,14 +4,17 @@
 	background-size: cover;
 }
 
-h4 .instructions {
-	border-bottom: 4px solid $lavender;
-	display: inline;
-}
+.single-page {
 
-.entry-meta .categories {
+	a {
+		color: $darkslategray;
+		font-weight: 200;
+		font-style: italic;
+	}
 
-	.categories a {
-		color: black;
+	h4 {
+		font-family: 'Heebo', sans-serif;
+		font-weight: 700;
+		display: inline-block;
 	}
 }

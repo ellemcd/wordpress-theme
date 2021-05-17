@@ -117,21 +117,20 @@ endif;
 // Photo
 if (!function_exists('sweet_recipes_image')) {
 	function sweet_recipes_image() {
-		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
+		// bail if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
 			return;
 		}
 
 		$image = get_field('image');
-		// dump($image);
-		if (!$image) {
-			return;
-		}
 
 		$img = wp_get_attachment_image_src($image['ID'], 'medium_large');
 		$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'medium_large');
-		// dump($img);
-		// dump($img_srcset);
+
+		if (!$img) {
+			return;
+		}
+
 		printf('<img src="%s" srcset="%s" class="w-50 me-3 mb-3 float-start img-fluid">', $img[0], $img_srcset);
 	}
 }
@@ -140,15 +139,16 @@ if (!function_exists('sweet_recipes_image')) {
 // Ingridients
 if (!function_exists('sweet_recipes_ingredients_details')) {
 	function sweet_recipes_ingredients_details() {
-		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
+		// bail if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
 			return;
 		}
 
+
 		if (have_rows('ingredients-details')) {
 			// yes we have at least one row of sub-fields to show!
 
-			echo'<div class="row"><div class="col"><ol class="list-group">';
+			echo'<ul class="recipes-ingredients list-group list-group-flush">';
 			while (have_rows('ingredients-details')) {
 				the_row();
 
@@ -158,7 +158,7 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 
 				printf('<li class="list-group-item">%s %s %s</li> ', $quantity, $measures, $ingredient);
 			}
-			echo '</ol></div></div>';
+			echo '</ul>';
 		}
 	}
 }
@@ -166,8 +166,8 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 // Ingredients End
 
 // Movie Genre Badge
-if ( ! function_exists( 'bootscore_movie_genre_badge' ) ) :
-	function bootscore_movie_genre_badge() {
+if ( ! function_exists( 'sweet_recipes_categories_badge' ) ) :
+	function sweet_recipes_categories_badge() {
 		// get all movie genres for the current post
 		$categories = get_the_terms(get_the_ID(), 'bs_recipie_category');
 
@@ -184,9 +184,9 @@ if ( ! function_exists( 'bootscore_movie_genre_badge' ) ) :
 			// get URL to the archive page for $genre
 			$category_url = get_term_link($category, 'bs_recipie_category');
 
-			// create anchor link
+			// Create anchor link
 			$category= sprintf(
-				'<em"><a href="%s" class="categories">%s</a></em>',
+				'<a href="%s">• %s</a>',
 				$category_url,
 				$category->name
 			);
@@ -196,19 +196,12 @@ if ( ! function_exists( 'bootscore_movie_genre_badge' ) ) :
 		}
 
 		// output badges with a space between them
-		echo implode(' ', $badges);
+		echo implode('  ', $badges);
 
 		echo '</div>';
 	}
 endif;
 // Category Badge End
-
-
-
-
-
-
-
 
 // Instructions
 if (!function_exists('sweet_recipes_instructions')) {

@@ -6,18 +6,32 @@
 
 	li {
 		counter-increment: my-awesome-counter;
-		display: flex;
-		font-size: 0.8rem;
+		font-size: 1rem;
 		margin-bottom: 0.5rem;
 	  }
 
 	li::before {
 		content: counter(my-awesome-counter);
 		font-weight: bold;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		margin-right: 0.5rem;
 		font-family: 'Abril Fatface', serif;
 		line-height: 1;
 	}
 
+
   }
+
+.recipes-ingredients {
+
+	margin: 0;
+	padding: 0;
+
+	li {
+		padding: 0;
+		margin-top: 0.7rem;
+		font-size: 1rem;
+	}
+
+
+}
