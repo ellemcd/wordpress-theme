@@ -11919,3 +11919,30 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 .single-page dt {
   font-size: 1.4rem;
 }
+
+.front-page .latest-added {
+  display: inline-block;
+  font-size: 2rem;
+  border-bottom: 4px solid #f4e9fe;
+}
+.front-page .card {
+  border: 0px;
+}
+.front-page .card-body {
+  padding: 1rem 0px;
+}
+.front-page .card-img-top {
+  width: 100%;
+  min-height: 20vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.front-page .blog-post-title {
+  border-bottom: 4px solid #feefe9;
+  font-size: 1rem;
+  display: inline-block;
+  font-weight: 300;
+}
+.front-page .blog-post-title a {
+  color: #333333;
+}

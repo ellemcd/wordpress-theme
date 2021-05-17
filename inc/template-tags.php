@@ -165,7 +165,48 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 
 // Ingredients End
 
-// Movie Genre Badge
+
+if ( ! function_exists( 'sweet_recipes_all_categories' ) ) :
+	function sweet_recipes_all_categories() {
+
+		// Bail  if ACF is not installed/activated.
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		$categories = get_terms([
+			'taxonomy' => 'bs_recipie_category',
+			'hide_empty' => false,
+		]);
+
+		$badges = [];
+
+		foreach ($categories as $category) {
+			// get URL to the archive page for $genre
+			$category_url = get_term_link($category, 'bs_recipie_category');
+
+			// Create anchor link
+			$category= sprintf(
+				'<a href="%s">%s</a>',
+				$category_url,
+				$category->name
+			);
+
+			// add anchor link to list of genre badges
+			array_push($badges, $category);
+		}
+
+		// output badges with a space between them
+		echo implode(' • ', $badges);
+
+
+	}
+endif;
+
+
+
+
+// Category Badge
 if ( ! function_exists( 'sweet_recipes_categories_badge' ) ) :
 	function sweet_recipes_categories_badge() {
 		// get all movie genres for the current post

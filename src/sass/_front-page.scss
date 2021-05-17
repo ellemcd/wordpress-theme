@@ -1,0 +1,37 @@
+.front-page {
+
+	.latest-added {
+		display: inline-block;
+		font-size: 2rem;
+		border-bottom: 4px solid $lavender;
+	}
+
+	.card {
+		border: 0px;
+	}
+
+	.card-body {
+		padding: 1rem 0px;
+	}
+
+	.card-img-top {
+		width: 100%;
+		min-height: 20vw;
+		object-fit: cover;
+	}
+
+	.blog-post-title {
+
+		border-bottom: 4px solid $linen;
+		font-size: 1rem;
+		display: inline-block;
+		font-weight: 300;
+
+		a {
+			color: $darkslategray;
+		}
+
+	}
+}
+
+

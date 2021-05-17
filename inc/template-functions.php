@@ -35,3 +35,5 @@ function bootscore_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'bootscore_pingback_header' );
+
+

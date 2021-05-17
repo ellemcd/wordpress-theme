@@ -74,7 +74,6 @@
                 </div>
 
                 <footer class="entry-footer clear-both">
-
 					<div class="row d-flex flex-row-reverse">
 
 
