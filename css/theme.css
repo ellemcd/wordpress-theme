@@ -11884,7 +11884,7 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 .recipe-instructions li::before {
   content: counter(my-awesome-counter);
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-right: 0.5rem;
   font-family: "Abril Fatface", serif;
   line-height: 1;
@@ -11915,4 +11915,7 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
   font-family: "Heebo", sans-serif;
   font-weight: 700;
   display: inline-block;
+}
+.single-page dt {
+  font-size: 1.4rem;
 }

@@ -148,7 +148,7 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 		if (have_rows('ingredients-details')) {
 			// yes we have at least one row of sub-fields to show!
 
-			echo'<ul class="recipes-ingredients list-group list-group-flush">';
+			echo'<ul class="recipes-ingredients list-group list-group-flush mb-4">';
 			while (have_rows('ingredients-details')) {
 				the_row();
 
