@@ -1,5 +1,13 @@
 .front-page {
 
+	.category-link {
+		border-bottom: 2x solid $whitesmoke;
+	}
+
+	.category-link:hover {
+		border-bottom: 2px solid $linen;
+	}
+
 	.latest-added {
 		display: inline-block;
 		font-size: 2rem;
@@ -27,11 +35,16 @@
 		display: inline-block;
 		font-weight: 300;
 
-		a {
-			color: $darkslategray;
-		}
-
 	}
+
+}
+
+.header-text {
+
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 5rem;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.44);
+	
 }
 
 

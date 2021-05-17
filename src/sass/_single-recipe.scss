@@ -6,10 +6,8 @@
 
 .single-page {
 
-	a {
-		color: $darkslategray;
-		font-weight: 200;
-		font-style: italic;
+	a:hover {
+		border-bottom: 3px solid $linen;
 	}
 
 	h4 {

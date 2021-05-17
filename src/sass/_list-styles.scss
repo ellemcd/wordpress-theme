@@ -6,14 +6,14 @@
 
 	li {
 		counter-increment: my-awesome-counter;
-		font-size: 1rem;
+
 		margin-bottom: 0.5rem;
 	  }
 
 	li::before {
 		content: counter(my-awesome-counter);
 		font-weight: bold;
-		font-size: 2rem;
+		font-size: 2.2rem;
 		margin-right: 0.5rem;
 		font-family: 'Abril Fatface', serif;
 		line-height: 1;
@@ -30,7 +30,7 @@
 	li {
 		padding: 0;
 		margin-top: 0.7rem;
-		font-size: 1rem;
+
 	}
 
 

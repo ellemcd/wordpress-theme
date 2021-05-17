@@ -29,12 +29,11 @@ get_header();
 					<div class="row archive-page">
 						<?php if (have_posts()) : ?>
 							<?php while (have_posts()) : the_post(); ?>
-								<div class="col-md-12 col-lg-6 col-xxl-4 mb-2">
+								<div class="col-md-12 col-lg-6 col-xxl-4">
 									<a href="<?php the_permalink(); ?>">
 										<div class="card">
 
 											<?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
-
 											<div class="card-body">
 
 												<h4 class="blog-post-title">
@@ -46,6 +45,9 @@ get_header();
 												<div class="card-text">
 													<?php the_excerpt(); ?>
 												</div>
+
+												<?php sweet_recipes_categories_badge(); ?>
+
 
 											</div>
 										</div><!-- card -->

@@ -187,7 +187,7 @@ if ( ! function_exists( 'sweet_recipes_all_categories' ) ) :
 
 			// Create anchor link
 			$category= sprintf(
-				'<a href="%s">%s</a>',
+				'<a class="category-link" href="%s">%s</a>',
 				$category_url,
 				$category->name
 			);
@@ -203,10 +203,7 @@ if ( ! function_exists( 'sweet_recipes_all_categories' ) ) :
 	}
 endif;
 
-
-
-
-// Category Badge
+// Category Badge For Archive
 if ( ! function_exists( 'sweet_recipes_categories_badge' ) ) :
 	function sweet_recipes_categories_badge() {
 		// get all movie genres for the current post
@@ -227,7 +224,7 @@ if ( ! function_exists( 'sweet_recipes_categories_badge' ) ) :
 
 			// Create anchor link
 			$category= sprintf(
-				'<a href="%s">• %s</a>',
+				'<a href="%s" class="badge bg-info mb-0">%s</a>',
 				$category_url,
 				$category->name
 			);
@@ -237,7 +234,46 @@ if ( ! function_exists( 'sweet_recipes_categories_badge' ) ) :
 		}
 
 		// output badges with a space between them
-		echo implode('  ', $badges);
+		echo implode(' ', $badges);
+
+		echo '</div>';
+	}
+endif;
+// Category Badge End
+
+
+// Category Badge
+if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
+	function sweet_recipes_categories_links() {
+		// get all movie genres for the current post
+		$categories = get_the_terms(get_the_ID(), 'bs_recipie_category');
+
+		// bail if no movie genres exist for this post
+		if (!$categories) {
+			return;
+		}
+
+		echo '<div class="mb-2">';
+		$badges = [];
+
+		// loop over all genres and construct a HTML-link for each of them
+		foreach ($categories as $category) {
+			// get URL to the archive page for $genre
+			$category_url = get_term_link($category, 'bs_recipie_category');
+
+			// Create anchor link
+			$category= sprintf(
+				'<a href="%s">%s</a>',
+				$category_url,
+				$category->name
+			);
+
+			// add anchor link to list of genre badges
+			array_push($badges, $category);
+		}
+
+		// output badges with a space between them
+		echo implode(' • ', $badges);
 
 		echo '</div>';
 	}
@@ -255,7 +291,7 @@ if (!function_exists('sweet_recipes_instructions')) {
 		if (have_rows('recipe-instructions')) {
 			// yes we have at least one row of sub-fields to show!
 
-			echo '<ol class="recipe-instructions">';
+			echo '<ol class="recipe-instructions" style="text-align: justify;">';
 			while (have_rows('recipe-instructions')) {
 				the_row();
 

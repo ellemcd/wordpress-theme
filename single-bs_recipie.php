@@ -33,9 +33,9 @@
 
             </header>
 
-            <div class="container single-page pb-5">
+            <div class="container pb-5">
 
-                <div class="entry-content">
+                <div class="entry-content single-page mb-4">
 
 					<?php if (!has_post_thumbnail()): ?>
 						<?php the_title('<h1>', '</h1>'); ?>
@@ -43,7 +43,7 @@
 
                     <p class="entry-meta">
                         <small class="text-muted">
-							<?php sweet_recipes_categories_badge(); ?>
+							<?php sweet_recipes_categories_links(); ?>
                         </small>
                     </p>
 						<div class="row">
@@ -67,21 +67,16 @@
 									<?php sweet_recipes_instructions(); ?>
 							</div>
 
-
 					<?php endif; ?>
 
 
+					<p>Here should be an gallery</p>
+
                 </div>
 
+
+
                 <footer class="entry-footer clear-both">
-					<div class="row d-flex flex-row-reverse">
-
-
-						<div class="mb-4">
-							<?php bootscore_tags(); ?>
-						</div>
-
-					</div>
 
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">

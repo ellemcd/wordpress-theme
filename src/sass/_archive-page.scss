@@ -21,11 +21,52 @@
 		display: inline-block;
 		font-weight: 300;
 
-		a {
-			color: $darkslategray;
-		}
-
 	}
 
 
 }
+
+// Sidebar Archive Page
+
+
+
+.archive-sidebar {
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+
+	.card-body {
+		padding: 1rem;
+		background-color: $white !important;
+	}
+
+	li {
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+	  }
+
+	li::before {
+		font-weight: bold;
+		font-size: 2rem;
+		margin-right: 0.5rem;
+		font-family: 'Abril Fatface', serif;
+		line-height: 1;
+	}
+
+	h2 {
+		border-bottom: 4px solid $lavender !important;
+		font-family: 'Heebo', sans-serif;
+		font-weight: 700;
+		display: inline-block;
+
+	}
+
+	a:hover {
+		border-bottom: 3px solid $linen;
+	}
+
+
+}
+
