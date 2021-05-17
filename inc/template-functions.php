@@ -36,4 +36,13 @@ function bootscore_pingback_header() {
 }
 add_action( 'wp_head', 'bootscore_pingback_header' );
 
-
+/**
+ * Change length of auto-generated excerpt.
+ *
+ * @param int $length
+ * @return int
+ */
+function mybasictheme_excerpt_length($length) {
+	return 10;
+}
+add_filter('excerpt_length', 'mybasictheme_excerpt_length', 10, 1);

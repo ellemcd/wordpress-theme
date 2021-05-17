@@ -27,7 +27,7 @@
                     "name": "quantity",
                     "type": "number",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -96,7 +96,7 @@
             "label": "Instructions for Recipe",
             "name": "recipe-instructions",
             "type": "repeater",
-            "instructions": "Put each instruction in different row.",
+            "instructions": "Write instructions for this recipe. Use a new row for each step.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -115,7 +115,7 @@
                     "label": "Instructions",
                     "name": "instructions",
                     "type": "textarea",
-                    "instructions": "Write instructions for this recipe. Use a new row for each step.",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -128,51 +128,6 @@
                     "maxlength": "",
                     "rows": 2,
                     "new_lines": ""
-                }
-            ]
-        },
-        {
-            "key": "field_609d665748366",
-            "label": "Page Slider",
-            "name": "page-slider",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Slide",
-            "sub_fields": [
-                {
-                    "key": "field_609d669548367",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
                 }
             ]
         }
@@ -194,5 +149,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620928375
+    "modified": 1621255806
 }

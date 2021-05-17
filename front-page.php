@@ -10,7 +10,6 @@
 
 $args = array(
 	'post_type' => 'bs_recipie',
-	'order'    => 'ASC',
 	'posts_per_page' => 9,
 );
 

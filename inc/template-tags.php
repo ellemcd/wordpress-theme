@@ -99,7 +99,7 @@ endif;
 
 				// Prep Time
 				if (!empty($servings)) {
-					printf ('<div class="border-bottom border-3 border-info ms-2">%s</div>',
+					printf ('<div class="border-bottom border-4 border-info ms-2">%s</div>',
 						sprintf(
 							__('%s servings', 'bootscore'),
 							$servings
