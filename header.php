@@ -8,7 +8,7 @@
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

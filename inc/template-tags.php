@@ -99,7 +99,7 @@ endif;
 
 				// Prep Time
 				if (!empty($servings)) {
-					printf ('<div class="border-bottom border-4 border-info ms-2">%s</div>',
+					printf ('<div class="border-bottom border-3 border-primary ms-3">%s</div>',
 						sprintf(
 							__('%s servings', 'bootscore'),
 							$servings
@@ -113,6 +113,52 @@ endif;
 	}
 endif;
 // Prep Time End
+
+/**
+ * Output custom logo (if set, otherwise output site title).
+ *
+ * @return void
+ */
+function sweet_recipes_navbar_brand() {
+	$custom_logo_id = get_theme_mod('custom_logo');
+	$logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+
+	if ($logo) {
+		echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
+	} else {
+		echo get_bloginfo('name');
+	}
+}
+
+
+
+if (!function_exists('sweet_recipes_gallery')) {
+	function sweet_recipes_gallery() {
+		// bail if ACF is not installed/activated, as we won't have a movie gallery to show anyway 😝
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		$gallery = get_field('gallery');
+		// dump($gallery);
+
+		if (!$gallery) {
+			return;
+		}
+
+		?>
+			<div class="flexslider">
+				<ul class="slides">
+					<?php foreach ($gallery as $image): ?>
+						<li>
+							<img src="<?php echo $image['url']; ?>">
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		<?php
+	}
+}
 
 // Photo
 if (!function_exists('sweet_recipes_image')) {
@@ -223,8 +269,9 @@ if ( ! function_exists( 'sweet_recipes_categories_badge' ) ) :
 			$category_url = get_term_link($category, 'bs_recipie_category');
 
 			// Create anchor link
+
 			$category= sprintf(
-				'<a href="%s" class="badge bg-info mb-0">%s</a>',
+				'<a href="%s" class="badge bg-info mt-2">%s</a>',
 				$category_url,
 				$category->name
 			);
@@ -242,7 +289,7 @@ endif;
 // Category Badge End
 
 
-// Category Badge
+// Category Links
 if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
 	function sweet_recipes_categories_links() {
 		// get all movie genres for the current post
@@ -253,7 +300,7 @@ if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
 			return;
 		}
 
-		echo '<div class="mb-2">';
+
 		$badges = [];
 
 		// loop over all genres and construct a HTML-link for each of them
@@ -275,10 +322,10 @@ if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
 		// output badges with a space between them
 		echo implode(' • ', $badges);
 
-		echo '</div>';
+
 	}
 endif;
-// Category Badge End
+// Category Links End
 
 // Instructions
 if (!function_exists('sweet_recipes_instructions')) {

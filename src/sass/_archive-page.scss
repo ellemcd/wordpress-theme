@@ -5,17 +5,16 @@
 	}
 
 	.card-body {
-		padding: 1rem 0px;
+		padding: 0 0 1rem 0;
 	}
 
 	.card-img-top {
 		width: 100%;
-		min-height: 20vw;
+		min-height: 35vh;
 		object-fit: cover;
 	}
 
 	.blog-post-title {
-
 		border-bottom: 4px solid $linen;
 		font-size: 1rem;
 		display: inline-block;

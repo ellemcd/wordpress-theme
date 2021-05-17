@@ -43,6 +43,7 @@ add_action( 'wp_head', 'bootscore_pingback_header' );
  * @return int
  */
 function mybasictheme_excerpt_length($length) {
-	return 10;
+	return 14;
 }
 add_filter('excerpt_length', 'mybasictheme_excerpt_length', 10, 1);
+

@@ -435,7 +435,7 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      'Heebo', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
@@ -454,7 +454,7 @@ $font-weight-normal:          400 !default;
 $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
-$font-weight-base:            $font-weight-normal !default;
+$font-weight-base:            $font-weight-light !default;
 
 $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
@@ -481,9 +481,9 @@ $font-sizes: (
 
 // scss-docs-start headings-variables
 $headings-margin-bottom:      $spacer / 2 !default;
-$headings-font-family:        null !default;
+$headings-font-family:        'Ubuntu' !default;
 $headings-font-style:         null !default;
-$headings-font-weight:        500 !default;
+$headings-font-weight:        400 !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              null !default;
 // scss-docs-end headings-variables

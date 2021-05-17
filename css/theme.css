@@ -31,7 +31,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Heebo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
@@ -52,7 +52,7 @@ body {
   margin: 0;
   font-family: var(--bs-font-sans-serif);
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
@@ -75,7 +75,8 @@ hr:not([size]) {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-family: "Ubuntu";
+  font-weight: 400;
   line-height: 1.2;
 }
 
@@ -2153,7 +2154,7 @@ progress {
   width: 100%;
   padding: 0.375rem 0.75rem;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
@@ -2337,7 +2338,7 @@ textarea.form-control-lg {
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
@@ -2680,7 +2681,7 @@ textarea.form-control-lg {
   align-items: center;
   padding: 0.375rem 0.75rem;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: #212529;
   text-align: center;
@@ -11935,7 +11936,7 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 }
 .front-page .card-img-top {
   width: 100%;
-  min-height: 20vw;
+  min-height: 35vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -11956,11 +11957,11 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
   border: 0px;
 }
 .archive-page .card-body {
-  padding: 1rem 0px;
+  padding: 0 0 1rem 0;
 }
 .archive-page .card-img-top {
   width: 100%;
-  min-height: 20vw;
+  min-height: 35vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
