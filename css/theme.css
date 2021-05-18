@@ -11936,7 +11936,7 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 }
 .front-page .card-img-top {
   width: 100%;
-  min-height: 35vh;
+  min-height: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -11947,12 +11947,6 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
   font-weight: 300;
 }
 
-.header-text {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 4rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.44);
-}
-
 .archive-page .card {
   border: 0px;
 }
@@ -11961,7 +11955,7 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 }
 .archive-page .card-img-top {
   width: 100%;
-  min-height: 35vh;
+  min-height: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
 }

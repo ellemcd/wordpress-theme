@@ -309,7 +309,7 @@ if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
 
 			// Create anchor link
 			$category= sprintf(
-				'<a href="%s">%s</a>',
+				'<span class="divider">&nbsp;/&nbsp;<a href="%s">%s</a></span>',
 				$category_url,
 				$category->name
 			);
@@ -319,7 +319,7 @@ if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
 		}
 
 		// output badges with a space between them
-		echo implode(' • ', $badges);
+		echo implode('', $badges);
 
 
 	}

@@ -490,9 +490,6 @@ endif;
 
 
 // Add your own NavBar Brand Picture
-
-
-
 function bs_navbar_brand() {
     $custom_logo_id = get_theme_mod('custom_logo');
     $logo = wp_get_attachment_image_src($custom_logo_id, 'full');

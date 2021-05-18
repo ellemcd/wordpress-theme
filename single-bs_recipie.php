@@ -37,7 +37,6 @@
 
                 <div class="entry-content single-page mb-10">
 
-
 					<?php if (!has_post_thumbnail()): ?>
 						<?php the_title('<h1>', '</h1>'); ?>
 					<?php endif; ?>

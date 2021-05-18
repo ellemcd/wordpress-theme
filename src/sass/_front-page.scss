@@ -24,27 +24,19 @@
 
 	.card-img-top {
 		width: 100%;
-		min-height: 35vh;
+		min-height: 40vh;
 		object-fit: cover;
 	}
 
 	.blog-post-title {
-
 		border-bottom: 4px solid $linen;
 		font-size: 1rem;
 		display: inline-block;
 		font-weight: 300;
-
 	}
 
 }
 
-.header-text {
 
-	font-family: 'Ubuntu', sans-serif;
-	font-size: 4rem;
-	text-shadow: 1px 1px 3px rgba(0,0,0,0.44);
-
-}
 
 

@@ -6,15 +6,15 @@
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
 	?>
 
 <div id="content" class="site-content container py-5 mt-5">
     <div id="primary" class="content-area">
-        
+
         <!-- Hook to add something nice -->
-        <?php bs_after_primary(); ?>  
+        <?php bs_after_primary(); ?>
 
         <div class="row">
             <div class="col">
@@ -38,9 +38,9 @@
 							?>
                             <div class="col">
                                 <div class="card-body">
-                                    
+
                                     <?php bootscore_category_badge(); ?>
-                                    
+
                                     <!-- Title -->
                                     <h2 class="blog-post-title">
                                         <a href="<?php the_permalink(); ?>">
@@ -80,7 +80,7 @@
 
             </div><!-- col -->
 
-            <?php get_sidebar(); ?>
+            <?php get_sidebar('blog'); ?>
         </div><!-- row -->
 
     </div><!-- #primary -->

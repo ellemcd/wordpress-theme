@@ -32,9 +32,7 @@ get_header();
 				<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?>
 
 				<div class="height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.3805497198879552) 0%, rgba(0,0,0,0.1500175070028011) 34%, rgba(255,255,255,0) 97%), url('<?php echo $thumb['0']; ?>;'); background-position: center center; background-size: cover;">
-					<div class="container h-100 d-flex align-items-center justify-content-center">
-						<?php the_title('<h1 class="header-text">', '</h1>'); ?>
-					</div>
+
 			</header>
 
 			<div class="container front-page pb-5">
@@ -49,7 +47,9 @@ get_header();
 
 					<div class="row" data-masonry='{"percentPosition": true }'>
 
-						<h3 class="latest-added mb-4"><?php _e('Latest added recipies','bootscore')?></h3>
+						<h3 class="latest-added mb-4">
+							<?php _e('Latest added recipies','bootscore')?>
+						</h3>
 
 						<?php if ($the_query->have_posts()) : ?>
 							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>

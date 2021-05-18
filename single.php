@@ -2,7 +2,7 @@
 	/*
 	 * Template Post Type: post
 	 */
-	  
+
 	 get_header();  ?>
 
 <div id="content" class="site-content container py-5 mt-4">
@@ -27,7 +27,7 @@
                                 <?php
 							         bootscore_date();
 							         _e(' by ', 'bootscore'); the_author_posts_link();
-							         bootscore_comment_count();							
+							         bootscore_comment_count();
 							     ?>
                             </small>
                         </p>
@@ -59,7 +59,7 @@
                 </main> <!-- #main -->
 
             </div><!-- col -->
-            <?php get_sidebar(); ?>
+            <?php get_sidebar('blog'); ?>
         </div><!-- row -->
 
     </div><!-- #primary -->
