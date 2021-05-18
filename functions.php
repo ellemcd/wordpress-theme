@@ -12,10 +12,6 @@
 //require get_template_directory() . '/woocommerce/woocommerce-functions.php';
 // WooCommerce End
 
-// Required CPT and
-require_once('inc/custom-post-types.php');
-require_once('inc/custom-taxonomies.php');
-
 // Load bundled ACF plugin
 require get_template_directory() . '/inc/acf-loader.php';
 
