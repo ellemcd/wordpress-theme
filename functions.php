@@ -55,6 +55,14 @@ if ( ! function_exists( 'bootscore_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		/**
+		* Declare support for custom logo.
+		 */
+		add_theme_support('custom-logo', [
+			'height' => 50,
+			'width' => 230,
+		]);
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
@@ -67,6 +75,7 @@ if ( ! function_exists( 'bootscore_setup' ) ) :
 			'primary' => esc_html__( 'Main Menu', 'bootscore' ),
 			'secondary' => esc_html__( 'Footer Menu', 'bootscore' ),
 		) );
+
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -478,4 +487,22 @@ if ( ! function_exists( 'bs_comment_links_in_new_tab' ) ) :
     add_filter('comment_text', 'bs_comment_links_in_new_tab');
 endif;
 // Open links in comments in new tab
+
+
+// Add your own NavBar Brand Picture
+
+
+
+function bs_navbar_brand() {
+    $custom_logo_id = get_theme_mod('custom_logo');
+    $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+
+    if ($logo) {
+        echo '<div class="d-flex align-items-end">
+		<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">
+		</div>';
+    } else {
+        echo get_bloginfo('name');
+    }
+}
 

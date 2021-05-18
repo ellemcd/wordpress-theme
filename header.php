@@ -42,8 +42,7 @@
 
                 <div class="container">
 
-                    <a class="navbar-brand d-md-none" href="<?php echo esc_url( home_url() ); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo/logo-sm.svg" alt="logo" class="logo sm"></a>
-                    <a class="navbar-brand d-none d-md-block" href="<?php echo esc_url( home_url() ); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo/logo.svg" alt="logo" class="logo md"></a>
+					<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>"><?php bs_navbar_brand(); ?></a>
 
                     <!-- Top Nav Widget -->
                     <div class="top-nav order-lg-3 flex-grow-1 flex-lg-grow-0 d-flex justify-content-end">
