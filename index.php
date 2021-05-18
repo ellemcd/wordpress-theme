@@ -11,7 +11,7 @@
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
 	?>
 <div id="content" class="site-content container py-5 mt-4">
@@ -36,7 +36,7 @@
 					    'ignore_sticky_posts' => 2
 					);
 					$the_query = new WP_Query( $args );
-					 if ( $the_query->have_posts() ) : 
+					 if ( $the_query->have_posts() ) :
 					 while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div class="card horizontal mb-4">
@@ -84,9 +84,9 @@
                             </div>
 
                     </article>
-                    <?php 
-					endwhile; 
-					endif;  
+                    <?php
+					endwhile;
+					endif;
 					 wp_reset_postdata();
 					  ?>
                 </div>
@@ -141,15 +141,15 @@
                     </div>
                     <?php endwhile; ?>
                     <?php endif; ?>
-    
+
                     <!-- Pagination -->
                     <div>
                         <?php bootscore_pagination(); ?>
                     </div>
-                    
+
                 </div>
                 <!-- col -->
-                <?php get_sidebar(); ?>
+                <?php get_sidebar('blog'); ?>
             </div>
             <!-- row -->
         </main><!-- #main -->

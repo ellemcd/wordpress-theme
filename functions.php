@@ -141,8 +141,20 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Sidebar
         register_sidebar( array(
-            'name'          => esc_html__( 'Sidebar', 'bootscore' ),
+            'name'          => esc_html__( 'Recipe Sidebar', 'bootscore' ),
             'id'            => 'sidebar-1',
+            'description'   => esc_html__( 'Add widgets here.', 'bootscore' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s card card-body mb-4 bg-light border-0">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title card-title border-bottom py-2">',
+            'after_title'   => '</h2>',
+        ) );
+        // Sidebar End
+
+		 // Blog Sidebar
+		 register_sidebar( array(
+            'name'          => esc_html__( 'Blog Sidebar', 'bootscore' ),
+            'id'            => 'blog-sidebar',
             'description'   => esc_html__( 'Add widgets here.', 'bootscore' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s card card-body mb-4 bg-light border-0">',
             'after_widget'  => '</section>',
