@@ -1,6 +1,6 @@
 {
     "key": "group_609d932036d17",
-    "title": "Recipe Photo",
+    "title": "Recipe Photos",
     "fields": [
         {
             "key": "field_609d932c8ea0b",
@@ -31,7 +31,7 @@
             "label": "Gallery",
             "name": "gallery",
             "type": "gallery",
-            "instructions": "",
+            "instructions": "[Portrait photos only]",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -51,7 +51,7 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "jpg, png, webp"
         }
     ],
     "location": [
@@ -71,5 +71,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621276710
+    "modified": 1621327753
 }

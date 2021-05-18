@@ -24,59 +24,33 @@
 
 			<pre>taxonomy.php</pre>
 
-            <div class="row" data-masonry='{"percentPosition": true }'>
-                <?php if (have_posts() ) : ?>
-                <?php while (have_posts() ) : the_post(); ?>
+            <div class="row archive-page">
+						<?php if (have_posts()) : ?>
+							<?php while (have_posts()) : the_post(); ?>
+								<div class="col-md-12 col-lg-6 col-xxl-4 mb-2">
+									<div class="card">
+										<a href="<?php the_permalink(); ?>">
 
-                <div class="col-md-6 col-lg-4 col-xxl-3 mb-4">
+											<?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
+											<?php sweet_recipes_categories_badge(); ?>
 
-                    <div class="card">
+											<div class="card-body">
+												<h4 class="blog-post-title">
+													<a href="<?php the_permalink(); ?>">
+														<?php the_title(); ?>
+													</a>
+												</h4>
+												<div class="card-text">
+													<?php the_excerpt(); ?>
+												</div>
+											</div>
+										</a>
 
-                        <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
-
-                        <div class="card-body">
-
-                            <?php bootscore_category_badge(); ?>
-
-                            <h2 class="blog-post-title">
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h2>
-
-                            <?php if ( 'post' === get_post_type() ) : ?>
-
-                            <small class="text-muted mb-2">
-                                <?php
-								bootscore_date();
-								bootscore_author();
-								bootscore_comments();
-								bootscore_edit();
-								?>
-                            </small>
-
-                            <?php endif; ?>
-
-                            <div class="card-text">
-                                <?php the_excerpt(); ?>
-                            </div>
-
-                            <div class="">
-                                <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
-                            </div>
-
-                            <?php bootscore_tags(); ?>
-
-                        </div><!-- card-body -->
-
-                    </div><!-- card -->
-
-                </div><!-- col -->
-
-                <?php endwhile; ?>
-                <?php endif; ?>
-
-            </div><!-- row -->
+									</div><!-- card -->
+								</div><!-- col -->
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
 
             <!-- Pagination -->
             <div>

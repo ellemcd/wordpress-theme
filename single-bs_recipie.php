@@ -24,9 +24,9 @@
 					<div class="recipes-header height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.7805497198879552) 0%, rgba(0,0,0,0.4500175070028011) 34%, rgba(255,255,255,0) 87%), url('<?php echo $thumb['0']; ?>;'); background-position: center bottom;">
 						<div class="container align-items-end justify-content-between d-flex h-100 pb-3">
 							<?php the_title('<h1>', '</h1>'); ?>
-							<h4>
+							<h5>
 								<?php sweet_recipes_servings(); ?>
-							</h4>
+							</h5>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -35,7 +35,7 @@
 
             <div class="container pb-5">
 
-                <div class="entry-content single-page mb-4">
+                <div class="entry-content single-page mb-10">
 
 
 					<?php if (!has_post_thumbnail()): ?>
@@ -73,7 +73,7 @@
 					<?php endif; ?>
 
 
-					<?php sweet_recipes_gallery(); ?>
+						<?php sweet_recipes_gallery(); ?>
 
                 </div>
 
@@ -82,7 +82,7 @@
                 <footer class="entry-footer clear-both">
 
                     <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
+                        <ul class="pagination justify-content-center pt-5">
                             <li class="page-item">
                                 <?php previous_post_link('%link'); ?>
                             </li>

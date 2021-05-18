@@ -99,7 +99,7 @@ endif;
 
 				// Prep Time
 				if (!empty($servings)) {
-					printf ('<div class="border-bottom border-3 border-primary ms-3">%s</div>',
+					printf ('<div class="border-bottom border-3 border-primary">%s</div>',
 						sprintf(
 							__('%s servings', 'bootscore'),
 							$servings
@@ -147,15 +147,14 @@ if (!function_exists('sweet_recipes_gallery')) {
 		}
 
 		?>
-			<div class="flexslider">
-				<ul class="slides">
-					<?php foreach ($gallery as $image): ?>
-						<li>
-							<img src="<?php echo $image['url']; ?>">
-						</li>
-					<?php endforeach; ?>
-				</ul>
+			<div class="owl-carousel owl-theme mt-5">
+				<?php foreach ($gallery as $image): ?>
+					<div class="item">
+						<img src="<?php echo $image['url']; ?>">
+					</div>
+				<?php endforeach; ?>
 			</div>
+
 		<?php
 	}
 }

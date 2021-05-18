@@ -3,7 +3,7 @@
 ----------------------------------------------------------------
 1.  Temporary Header
 2.  Theme
-3.  JQuery lightSlider
+3.  Owl Carousel
 --------------------------------------------------------------*/
 
 
@@ -177,10 +177,20 @@ jQuery(document).ready(function ($) {
 
 
 /*--------------------------------------------------------------
-3. Flexslider
+3. Owl Carousel
 --------------------------------------------------------------*/
 
 
-jQuery(document).ready(function ($) {
-	$('.flexslider').flexslider();
+jQuery(document).ready(function($){
+	$('.owl-carousel').owlCarousel({
+		loop:true,
+		margin:10,
+		center:true,
+		autoplay:true,
+		autoPlaySpeed: 5000,
+        autoPlayTimeout: 5000,
+		autoplayHoverPause:true,
+		items:3,
+	})
+
 });
