@@ -1,15 +1,14 @@
 <?php
-	/**
-	 * Template Name: Left Sidebar
-	 *
-	 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-	 *
-	 * @package Bootscore
-	 */
-	
-	get_header();
-	?>
+    /**
+     * Template Name: Right Sidebar
+     *
+     * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+     *
+     * @package Bootscore
+     */
 
+    get_header();
+    ?>
 <div id="content" class="site-content container py-5 mt-5">
     <div id="primary" class="content-area">
 
@@ -17,17 +16,17 @@
         <?php bs_after_primary(); ?>
 
         <div class="row">
-            <!-- sidebar -->
-            <?php get_sidebar(); ?>
-            <div class="col-md-8 col-xxl-9 order-first order-md-last">
+            <div class="col-md-8 col-xxl-9">
 
                 <main id="main" class="site-main">
 
                     <header class="entry-header">
                         <?php the_post(); ?>
-                        <?php the_category(', ') ?><?php the_terms( $post->ID, 'isopost_categories', ' ', ' / ' ); ?>
+                        <!-- Title -->
                         <?php the_title('<h1>', '</h1>'); ?>
+                        <!-- Featured Image-->
                         <?php bootscore_post_thumbnail(); ?>
+                        <!-- .entry-header -->
                     </header>
 
                     <div class="entry-content">
@@ -44,15 +43,16 @@
                     <footer class="entry-footer">
 
                     </footer>
-
+                    <!-- Comments -->
                     <?php comments_template(); ?>
 
                 </main><!-- #main -->
 
             </div><!-- col -->
+            <?php get_sidebar('blog'); ?>
         </div><!-- row -->
 
     </div><!-- #primary -->
-</div><!-- #contenty -->
+</div><!-- #content -->
 <?php
 get_footer();

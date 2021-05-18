@@ -42,6 +42,7 @@ add_action( 'wp_head', 'bootscore_pingback_header' );
  * @param int $length
  * @return int
  */
+
 function mybasictheme_excerpt_length($length) {
 	return 14;
 }
