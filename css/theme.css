@@ -11919,8 +11919,7 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 
 .frontpage-header {
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 70vh;
+  height: 50vh;
 }
 
 .front-page .category-link {
