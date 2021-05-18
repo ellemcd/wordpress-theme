@@ -101,6 +101,7 @@ endif;
 				if (!empty($servings)) {
 					printf ('<div class="border-bottom border-3 border-primary">%s</div>',
 						sprintf(
+							// translators: How many servings does this recipe include?
 							__('%s servings', 'bootscore'),
 							$servings
 						)
