@@ -58,16 +58,22 @@
 							</div>
 						</div>
 
-
-					<?php if (empty(sweet_recipes_image())): ?>
-						<div class="col-12">
-							<h4 class="border-bottom border-3 border-info "><?php _e('Ingredients','bootscore')?></h4>
-								<?php sweet_recipes_ingredients_details(); ?>
-
-
-							<h4 class="border-bottom border-3 border-info mt-2"><?php _e('Instructions','bootscore')?></h4>
-									<?php sweet_recipes_instructions(); ?>
+						<div class="row">
+							<div class="col-6">
+						<?php if (empty(sweet_recipes_image())): ?>
 							</div>
+							<div class="col-6 align-self-center">
+								<h4 class="border-bottom border-4 border-info"><?php _e('Ingredients','bootscore')?></h4>
+									<?php sweet_recipes_ingredients_details(); ?>
+							</div>
+						</div>
+						<div class="row flex-row-reverse">
+							<div class="col-sm-12 col-md-6">
+								<h4 class="border-bottom border-4 border-warning mt-2"><?php _e('Instructions','bootscore')?></h4>
+										<?php sweet_recipes_instructions(); ?>
+							</div>
+						</div>
+
 
 					<?php endif; ?>
 
@@ -76,12 +82,11 @@
 
                 </div>
 
-
-
                 <footer class="entry-footer clear-both">
 
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center pt-5">
+
                             <li class="page-item">
                                 <?php previous_post_link('%link'); ?>
                             </li>
@@ -91,6 +96,7 @@
                         </ul>
                     </nav>
                 </footer>
+
 
                 <?php comments_template(); ?>
 

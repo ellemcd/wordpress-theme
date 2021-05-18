@@ -31,7 +31,7 @@ get_header();
 
 				<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?>
 
-				<div class="height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.3805497198879552) 0%, rgba(0,0,0,0.1500175070028011) 34%, rgba(255,255,255,0) 97%), url('<?php echo $thumb['0']; ?>;'); background-position: center center; background-size: cover;">
+				<div class="frontpage-header bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.3805497198879552) 0%, rgba(0,0,0,0.1500175070028011) 34%, rgba(255,255,255,0) 97%), url('<?php echo $thumb['0']; ?>;'); background-position: center center; background-size: cover;">
 
 			</header>
 

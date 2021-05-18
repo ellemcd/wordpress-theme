@@ -4,10 +4,10 @@
     "fields": [
         {
             "key": "field_609d932c8ea0b",
-            "label": "Image",
+            "label": "Poster Image",
             "name": "image",
             "type": "image",
-            "instructions": "",
+            "instructions": "This image will be shown in the feed, next to ingredients.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -71,5 +71,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621327753
+    "modified": 1621350299
 }

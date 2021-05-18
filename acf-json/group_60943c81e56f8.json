@@ -3,11 +3,95 @@
     "title": "Recipe Content",
     "fields": [
         {
-            "key": "field_60942bf7f1982",
-            "label": "Ingredients Details",
-            "name": "ingredients-details",
+            "key": "field_6094282226ea7",
+            "label": "Prep Time\/Cooking Time and Servings",
+            "name": "recipe_details",
             "type": "repeater",
             "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_6094295fb83c4",
+                    "label": "Prep Time",
+                    "name": "prep_time",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "minutes",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_609429adb83c5",
+                    "label": "Cooking Time",
+                    "name": "cooking_time",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "minutes",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_609d12f7823ab",
+                    "label": "Servings",
+                    "name": "servings",
+                    "type": "number",
+                    "instructions": "How many servings are included this recipe?",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": 12,
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_60942bf7f1982",
+            "label": "Details",
+            "name": "ingredients-details",
+            "type": "repeater",
+            "instructions": "Add your recipie ingredients",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -93,10 +177,10 @@
         },
         {
             "key": "field_60942df6ec65d",
-            "label": "Instructions for Recipe",
+            "label": "Instructions",
             "name": "recipe-instructions",
             "type": "repeater",
-            "instructions": "Write instructions for this recipe. Use a new row for each step.",
+            "instructions": "Write instructions for the recipe. Add a new instruction for each instruction.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -149,5 +233,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621255806
+    "modified": 1621349546
 }

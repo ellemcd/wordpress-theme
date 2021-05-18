@@ -176,7 +176,7 @@ if (!function_exists('sweet_recipes_image')) {
 			return;
 		}
 
-		printf('<img src="%s" srcset="%s" class="w-50 me-3 mb-3 float-start img-fluid">', $img[0], $img_srcset);
+		printf('<img src="%s" srcset="%s" class="w-100 me-3 mb-3 float-start img-fluid">', $img[0], $img_srcset);
 	}
 }
 // Photo End
