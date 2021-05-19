@@ -22,8 +22,7 @@ get_header();
 				<main id="main" class="site-main">
 
 					<header class="page-header mb-4">
-						<h1><?php the_archive_title(); ?></h1>
-						<?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+						<h1><?php post_type_archive_title(''); ?></h1>
 					</header>
 
 					<div class="row cards-section">

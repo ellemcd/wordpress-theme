@@ -23,7 +23,7 @@ get_header();
 
 				<header class="page-header mb-4">
 				<h1><?php single_cat_title(); ?></h1>
-					<?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+
 				</header>
 
 					<div class="row cards-section">
