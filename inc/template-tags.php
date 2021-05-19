@@ -208,7 +208,7 @@ if (!function_exists('bootscore_recipe_notes')) {
 			// yes we have at least one row of sub-fields to show!
 
 			echo '<h4 class="border-bottom border-4 border-primary">' . esc_html__( 'Notes', 'bootscore' ) . '</h4>';
-			echo'<ul class="recipe-notes mb-4">';
+			echo'<ul class="recipe-notes mb-4 me-2">';
 			while (have_rows('recipe-notes')) {
 				the_row();
 
@@ -319,6 +319,36 @@ if ( ! function_exists( 'bootscore_categories_links' ) ) :
 	}
 endif;
 // Category Links End
+
+// Tags linked with the specific Recipe.
+if ( ! function_exists( 'bootscore_tags_links' ) ) :
+	function bootscore_tags_links() {
+
+		$tags = get_the_terms(get_the_ID(), 'bs_recipie_tags');
+
+		if (!$tags) {
+			return;
+		}
+
+		$links = [];
+
+		foreach ($tags as $tags) {
+
+			$url = get_term_link($tags, 'bs_recipie_tags');
+			$tags = sprintf(
+				'<a href="%s">#%s</a></span>',
+				$url,
+				$tags->name
+			);
+
+			array_push($links, $tags);
+		}
+
+		echo implode(' ', $links);
+
+	}
+endif;
+// Tags linked with the specific Recipe.
 
 
 

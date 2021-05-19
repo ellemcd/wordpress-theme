@@ -24,9 +24,8 @@
 					<div class="recipes-header height-75 bg-dark text-light align-items-end dflex mb-3" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.7805497198879552) 0%, rgba(0,0,0,0.4500175070028011) 34%, rgba(255,255,255,0) 87%), url('<?php echo $thumb['0']; ?>;'); background-position: center bottom;">
 						<div class="container align-items-end justify-content-between d-flex h-100 pb-3">
 							<?php the_title('<h1>', '</h1>'); ?>
-							<h5>
-								<?php bootscore_recipe_servings(); ?>
-							</h5>
+							<h5><?php bootscore_recipe_servings(); ?>
+						</h5>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -45,6 +44,10 @@
                         <small class="text-muted">
 							<?php _e('Categories:','bootscore') ?>
 							<?php bootscore_categories_links(); ?>
+							<br>
+							<?php _e('Tags:','bootscore') ?>
+							<?php bootscore_tags_links(); ?>
+
                         </small>
                     </p>
 
