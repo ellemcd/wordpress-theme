@@ -88,7 +88,7 @@ $args = [
 	"show_in_menu" => true,
 	"show_in_nav_menus" => true,
 	"query_var" => true,
-	"rewrite" => [ 'slug' => 'tag', 'with_front' => true, ],
+	"rewrite" => [ 'slug' => 'tags', 'with_front' => true, ],
 	"show_admin_column" => false,
 	"show_in_rest" => true,
 	"rest_base" => "bs_recipie_tags",

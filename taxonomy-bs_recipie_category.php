@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Archive Template: Equal Height Sidebar Right
+ * Taxonomy Template: Equal Height Sidebar Right
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

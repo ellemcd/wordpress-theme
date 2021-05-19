@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Category Template: Masonry
+ * Taxonomy Template: Equal Height Sidebar Right
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -16,28 +16,36 @@ get_header();
 		<!-- Hook to add something nice -->
 		<?php bs_after_primary(); ?>
 
-		<main id="main" class="site-main">
+		<div class="row">
+			<div class="col">
 
-			<header class="page-header mb-4">
+				<main id="main" class="site-main">
+
+				<header class="page-header mb-4">
 				<h1><?php single_cat_title(); ?></h1>
-			</header>
 
-			<div class="row cards-section">
-				<?php if (have_posts()) : ?>
-					<?php while (have_posts()) : the_post(); ?>
-						<div class="col-md-12 col-lg-6 col-xxl-4 mb-2">
-							<?php get_template_part('template-parts/content-cards'); ?>
-						</div><!-- col -->
-					<?php endwhile; ?>
-				<?php endif; ?>
-			</div>
+				</header>
 
-			<!-- Pagination -->
-			<div>
-				<?php bootscore_pagination(); ?>
-			</div>
+					<div class="row cards-section">
+						<?php if (have_posts()) : ?>
+							<?php while (have_posts()) : the_post(); ?>
+								<div class="col-md-12 col-lg-6 col-xxl-4 mb-2">
+									<?php get_template_part('template-parts/content-cards'); ?>
+								</div><!-- col -->
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
 
-		</main><!-- #main -->
+					<!-- Pagination -->
+					<div>
+						<?php bootscore_pagination(); ?>
+					</div>
+
+				</main><!-- #main -->
+
+			</div><!-- col -->
+			<?php get_sidebar(); ?>
+		</div><!-- row -->
 
 	</div><!-- #primary -->
 </div><!-- #content -->
