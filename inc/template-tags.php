@@ -34,7 +34,7 @@ if ( ! function_exists( 'bootscore_recipe_prep_time' ) ) :
 						)
 					);
 				} else {
-					echo '<dl><dd class="mb-0">Prep Time:</dd><dt>-</dt></dl>';
+					echo __('<dl><dd class="mb-0">Prep Time:</dd><dt>-</dt></dl>','bootscore');
 				}
 
 			// End loop.
@@ -70,7 +70,7 @@ endif;
 						)
 					);
 				} else {
-					echo '<dl><dd class="mb-0">Cooking Time:</dd><dt>-</dt></dl>';
+					echo __('<dl><dd class="mb-0">Cooking Time:</dd><dt>-</dt></dl>','bootscore');
 				}
 
 			// End loop.
