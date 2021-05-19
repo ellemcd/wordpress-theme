@@ -31,5 +31,23 @@
 
 	}
 
+}
 
+.recipe-notes {
+
+	list-style: none;
+
+	li {
+		margin-top: 1rem;
+
+	}
+	li::before {
+		content: "\2022";
+		color: $primary;
+		font-weight: bolder;
+		display: inline-block;
+		width: 2em;
+		margin-left: -2em;
+
+	}
 }

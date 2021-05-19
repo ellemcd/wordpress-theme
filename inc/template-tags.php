@@ -8,11 +8,11 @@
  */
 
 
- // Prep Time
+ // Prep Time for Recipe.
 if ( ! function_exists( 'bootscore_recipe_prep_time' ) ) :
 	function bootscore_recipe_prep_time() {
 
-		// Bail  if ACF is not installed/activated.
+		// Bail if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
 			return;
 		}
@@ -44,7 +44,7 @@ if ( ! function_exists( 'bootscore_recipe_prep_time' ) ) :
 endif;
 // Prep Time End
 
- // Cooking Time
+ // Cooking Time for the Recipe
  if ( ! function_exists( 'bootscore_recipe_cooking_time' ) ) :
 	function bootscore_recipe_cooking_time() {
 
@@ -80,11 +80,11 @@ endif;
 endif;
 // Cooking Time End
 
- // Prep Time
+ // Servings for the Recipe.
  if ( ! function_exists( 'bootscore_recipe_servings' ) ) :
 	function bootscore_recipe_servings() {
 
-		// Bail  if ACF is not installed/activated.
+		// Bail if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
 			return;
 		}
@@ -112,35 +112,17 @@ endif;
 		endif;
 	}
 endif;
-// Prep Time End
+// Servings for the Recipe
 
-/**
- * Output custom logo (if set, otherwise output site title).
- *
- * @return void
- */
-function bootscore_navbar_brand() {
-	$custom_logo_id = get_theme_mod('custom_logo');
-	$logo = wp_get_attachment_image_src($custom_logo_id, 'full');
-
-	if ($logo) {
-		echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
-	} else {
-		echo get_bloginfo('name');
-	}
-}
-
-
-
+// Recipe Gallery
 if (!function_exists('bootscore_recipe_gallery')) {
 	function bootscore_recipe_gallery() {
-		// bail if ACF is not installed/activated, as we won't have a movie gallery to show anyway 😝
+
 		if (!function_exists('get_field')) {
 			return;
 		}
 
 		$gallery = get_field('gallery');
-		// dump($gallery);
 
 		if (!$gallery) {
 			return;
@@ -158,8 +140,10 @@ if (!function_exists('bootscore_recipe_gallery')) {
 		<?php
 	}
 }
+// Recipe Gallery End
 
-// Photo
+
+// Photo shwon in the Recipe Feed.
 if (!function_exists('bootscore_recipe_image')) {
 	function bootscore_recipe_image() {
 		// bail if ACF is not installed/activated.
@@ -179,21 +163,23 @@ if (!function_exists('bootscore_recipe_image')) {
 		printf('<img src="%s" srcset="%s" class="w-100 me-3 mb-3 float-start img-fluid">', $img[0], $img_srcset);
 	}
 }
-// Photo End
+// Photo shwon in the Recipe Feed End
 
-// Ingridients
+
+// Ingridients Details
 if (!function_exists('bootscore_recipe_ingredients_details')) {
 	function bootscore_recipe_ingredients_details() {
-		// bail if ACF is not installed/activated.
+
+		// Bail if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
 			return;
 		}
 
 		if (have_rows('ingredients-details')) {
-			// yes we have at least one row of sub-fields to show!
 
 			echo '<h4 class="border-bottom border-4 border-info">' . esc_html__( 'Ingredients', 'bootscore' ) . '</h4>';
 			echo'<ul class="recipes-ingredients list-group list-group-flush mb-4">';
+
 			while (have_rows('ingredients-details')) {
 				the_row();
 
@@ -207,8 +193,8 @@ if (!function_exists('bootscore_recipe_ingredients_details')) {
 		}
 	}
 }
+// Ingridients Details End
 
-// Ingredients End
 
 // Notes for Recipes
 if (!function_exists('bootscore_recipe_notes')) {
@@ -222,12 +208,12 @@ if (!function_exists('bootscore_recipe_notes')) {
 			// yes we have at least one row of sub-fields to show!
 
 			echo '<h4 class="border-bottom border-4 border-primary">' . esc_html__( 'Notes', 'bootscore' ) . '</h4>';
-			echo'<ul class="recipes-notes list-group mb-4">';
+			echo'<ul class="recipe-notes mb-4">';
 			while (have_rows('recipe-notes')) {
 				the_row();
 
 				$notes = get_sub_field('note');
-				printf('<li class="list-group-item">%s</li> ', $notes);
+				printf('<li>%s</li> ', $notes);
 			}
 			echo '</ul>';
 
@@ -237,11 +223,11 @@ if (!function_exists('bootscore_recipe_notes')) {
 // Notes End
 
 
-// Lists of all Categories on the whole site.
+// Lists of all Recipe Categories. Shown on the first page.
 if ( ! function_exists( 'bootscore_all_categories' ) ) :
 	function bootscore_all_categories() {
 
-		// Bail  if ACF is not installed/activated.
+		// Bail if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
 			return;
 		}
@@ -251,101 +237,84 @@ if ( ! function_exists( 'bootscore_all_categories' ) ) :
 			'hide_empty' => false,
 		]);
 
-		$badges = [];
+		$categorylinks = [];
 
 		foreach ($categories as $category) {
-			// get URL to the archive page for $genre
-			$category_url = get_term_link($category, 'bs_recipie_category');
 
-			// Create anchor link
+			$url = get_term_link($category, 'bs_recipie_category');
 			$category= sprintf(
 				'<a class="category-link" href="%s">%s</a>',
-				$category_url,
+				$url,
 				$category->name
 			);
 
-			// add anchor link to list of genre badges
-			array_push($badges, $category);
+			array_push($categorylinks, $category);
 		}
 
-		// output badges with a space between them
-		echo implode(' • ', $badges);
+		// output categorylinks with a space between them
+		echo implode(' • ', $categorylinks);
 	}
 endif;
 // End
 
-// Category Badge For Archive
+// Category Badge on Cards
 if ( ! function_exists( 'bootscore_categories_badge' ) ) :
 	function bootscore_categories_badge() {
-		// get all movie genres for the current post
+
+
 		$categories = get_the_terms(get_the_ID(), 'bs_recipie_category');
 
-		// bail if no movie genres exist for this post
 		if (!$categories) {
 			return;
 		}
 
-		echo '<div class="mb-2">';
 		$badges = [];
 
-		// loop over all genres and construct a HTML-link for each of them
+		echo '<div class="mb-2">';
 		foreach ($categories as $category) {
-			// get URL to the archive page for $genre
-			$category_url = get_term_link($category, 'bs_recipie_category');
 
-			// Create anchor link
-			$category= sprintf(
+			$url = get_term_link($category, 'bs_recipie_category');
+			$category = sprintf(
 				'<a href="%s" class="badge bg-info mt-2">%s</a>',
-				$category_url,
+				$url,
 				$category->name
 			);
 
-			// add anchor link to list of genre badges
 			array_push($badges, $category);
 		}
 
-		// output badges with a space between them
 		echo implode(' ', $badges);
-
 		echo '</div>';
 	}
 endif;
-// Category Badge End
+// Category Badge on Cards
 
 
-// Category Links
+// Category Links linked with the specific Recipe.
 if ( ! function_exists( 'bootscore_categories_links' ) ) :
 	function bootscore_categories_links() {
-		// get all movie genres for the current post
+
 		$categories = get_the_terms(get_the_ID(), 'bs_recipie_category');
 
-		// bail if no movie genres exist for this post
 		if (!$categories) {
 			return;
 		}
 
+		$categorylinks = [];
 
-		$badges = [];
-
-		// loop over all genres and construct a HTML-link for each of them
 		foreach ($categories as $category) {
-			// get URL to the archive page for $genre
-			$category_url = get_term_link($category, 'bs_recipie_category');
 
-			// Create anchor link
-			$category= sprintf(
+			$url = get_term_link($category, 'bs_recipie_category');
+			$category = sprintf(
 				'<a href="%s">%s</a></span>',
-				$category_url,
+				$url,
 				$category->name
 			);
 
-			// add anchor link to list of genre badges
-			array_push($badges, $category);
+			array_push($categorylinks, $category);
 		}
 
-		// output badges with a space between them
-		echo implode('', $badges);
-
+		echo implode(' • ', $categorylinks);
 
 	}
 endif;
@@ -354,7 +323,7 @@ endif;
 
 
 
-// Instructions
+// Recipe Instructions
 if (!function_exists('bootscore_recipe_instructions')) {
 	function bootscore_recipe_instructions() {
 		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
@@ -378,7 +347,7 @@ if (!function_exists('bootscore_recipe_instructions')) {
 		}
 	}
 }
-// Instructions End
+// Recipe Instructions End
 
 // Category Badge
 if ( ! function_exists( 'bootscore_category_badge' ) ) :
@@ -399,6 +368,20 @@ if ( ! function_exists( 'bootscore_category_badge' ) ) :
 	}
 endif;
 // Category Badge End
+
+
+// Edit your own custom logo.
+function bootscore_navbar_brand() {
+	$custom_logo_id = get_theme_mod('custom_logo');
+	$logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+
+	if ($logo) {
+		echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
+	} else {
+		echo get_bloginfo('name');
+	}
+}
+// Edit your own custom logo End
 
 
 // Category

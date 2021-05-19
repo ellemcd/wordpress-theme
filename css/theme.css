@@ -11899,6 +11899,21 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
   margin-top: 0.7rem;
 }
 
+.recipe-notes {
+  list-style: none;
+}
+.recipe-notes li {
+  margin-top: 1rem;
+}
+.recipe-notes li::before {
+  content: "•";
+  color: #bcecf9;
+  font-weight: bolder;
+  display: inline-block;
+  width: 2em;
+  margin-left: -2em;
+}
+
 .recipes-header {
   background-attachment: fixed;
   background-repeat: no-repeat;
