@@ -1,0 +1,64 @@
+{
+    "key": "group_60a5009df1511",
+    "title": "Recipe Notes",
+    "fields": [
+        {
+            "key": "field_60a500a3b973a",
+            "label": "Recipe Notes",
+            "name": "recipe-notes",
+            "type": "repeater",
+            "instructions": "Have you got more to add?\r\nWrite your notes and they will be printed in an unordered list next to instructions.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_60a500dcb973b",
+                    "label": "Note",
+                    "name": "note",
+                    "type": "textarea",
+                    "instructions": "Have you got more to add?\r\nWrite your notes and they will be printed in an unordered list next to instructions.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "bs_recipie"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1621426667
+}
