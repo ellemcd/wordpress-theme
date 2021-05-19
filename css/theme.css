@@ -11919,7 +11919,7 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 
 .frontpage-header {
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 65vh;
 }
 
 .front-page .category-link {
@@ -11946,25 +11946,6 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
      object-fit: cover;
 }
 .front-page .blog-post-title {
-  border-bottom: 4px solid #feefe9;
-  font-size: 1rem;
-  display: inline-block;
-  font-weight: 300;
-}
-
-.archive-page .card {
-  border: 0px;
-}
-.archive-page .card-body {
-  padding: 0 0 1rem 0;
-}
-.archive-page .card-img-top {
-  width: 100%;
-  min-height: 40vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.archive-page .blog-post-title {
   border-bottom: 4px solid #feefe9;
   font-size: 1rem;
   display: inline-block;
@@ -11999,4 +11980,8 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 }
 .archive-sidebar a:hover {
   border-bottom: 3px solid #feefe9;
+}
+
+.navbar-brand {
+  padding: 0;
 }

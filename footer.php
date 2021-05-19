@@ -15,14 +15,14 @@
 
     <div class="bootscore-footer bg-light pt-5 pb-3">
         <div class="container">
-            
+
             <!-- Top Footer Widget -->
             <?php if ( is_active_sidebar( 'top-footer' )) : ?>
                 <div>
                     <?php dynamic_sidebar( 'top footer' ); ?>
                 </div>
-            <?php endif; ?>            
-            
+            <?php endif; ?>
+
             <div class="row">
 
                 <!-- Footer 1 Widget -->
@@ -63,7 +63,7 @@
                 <!-- Footer Widgets End -->
 
             </div>
-            
+
             <!-- Footer Menu -->
             <?php
                 wp_nav_menu( array(
@@ -76,15 +76,15 @@
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker(),
                 ) );
-            ?>  
+            ?>
             <!-- Footer Menu -->
-            
+
         </div>
     </div>
-    
+
     <div class="bootscore-info bg-light text-muted border-top py-2 text-center">
         <div class="container">
-            <small>&copy;&nbsp;<?php echo Date('Y'); ?> - <?php bloginfo('name'); ?></small>    
+            <small>&copy;&nbsp;<?php echo Date('Y'); ?> - <?php bloginfo('name'); ?> - Made by Elle</small>
         </div>
     </div>
 

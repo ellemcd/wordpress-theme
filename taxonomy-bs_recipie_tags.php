@@ -25,7 +25,7 @@ get_header();
 
 			<pre>taxonomy-tags.php</pre>
 
-			<div class="row archive-page">
+			<div class="row cards-section">
 				<?php if (have_posts()) : ?>
 					<?php while (have_posts()) : the_post(); ?>
 						<div class="col-md-12 col-lg-6 col-xxl-4 mb-2">
