@@ -25,7 +25,7 @@
 						<div class="container align-items-end justify-content-between d-flex h-100 pb-3">
 							<?php the_title('<h1>', '</h1>'); ?>
 							<h5>
-								<?php sweet_recipes_servings(); ?>
+								<?php bootscore_recipe_servings(); ?>
 							</h5>
 						</div>
 					</div>
@@ -44,7 +44,7 @@
                     <p class="entry-meta">
                         <small class="text-muted">
 							<?php _e('Categories:','bootscore') ?>
-							<?php sweet_recipes_categories_links(); ?>
+							<?php bootscore_categories_links(); ?>
                         </small>
                     </p>
 
@@ -53,33 +53,33 @@
 								<?php the_content(); ?>
 							</div>
 							<div class="col-lg-6 mb-4 d-flex justify-content-evenly">
-								<?php sweet_recipes_prep_time(); ?>
-								<?php sweet_recipes_cooking_time(); ?>
+								<?php bootscore_recipe_prep_time(); ?>
+								<?php bootscore_recipe_cooking_time(); ?>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-6">
-								<?php if (empty(sweet_recipes_image())): ?>  <?php endif; ?>
+								<?php if (empty(bootscore_recipe_image())): ?>  <?php endif; ?>
 							</div>
 							<div class="col-6 align-self-center">
-								<?php sweet_recipes_ingredients_details(); ?>
+								<?php bootscore_recipe_ingredients_details(); ?>
 							</div>
 						</div>
 
 						<div class="row flex-row-reverse">
 							<div class="col-sm-12 col-md-6 mb-4">
-								<?php sweet_recipes_instructions(); ?>
+								<?php bootscore_recipe_instructions(); ?>
 							</div>
 
 							<div class="col-sm-12 col-md-6 align-self-center">
-								<?php if(empty(sweet_recipes_notes())): ?><?php endif;  ?>
+								<?php if(empty(bootscore_recipe_notes())): ?><?php endif;  ?>
 							</div>
 
 						</div>
 
 						<!-- Gallery -->
-						<?php sweet_recipes_gallery(); ?>
+						<?php bootscore_recipe_gallery(); ?>
 
                 </div>
 

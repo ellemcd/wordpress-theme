@@ -9,8 +9,8 @@
 
 
  // Prep Time
-if ( ! function_exists( 'sweet_recipes_prep_time' ) ) :
-	function sweet_recipes_prep_time() {
+if ( ! function_exists( 'bootscore_recipe_prep_time' ) ) :
+	function bootscore_recipe_prep_time() {
 
 		// Bail  if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
@@ -45,8 +45,8 @@ endif;
 // Prep Time End
 
  // Cooking Time
- if ( ! function_exists( 'sweet_recipes_cooking_time' ) ) :
-	function sweet_recipes_cooking_time() {
+ if ( ! function_exists( 'bootscore_recipe_cooking_time' ) ) :
+	function bootscore_recipe_cooking_time() {
 
 		// Bail  if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
@@ -81,8 +81,8 @@ endif;
 // Cooking Time End
 
  // Prep Time
- if ( ! function_exists( 'sweet_recipes_servings' ) ) :
-	function sweet_recipes_servings() {
+ if ( ! function_exists( 'bootscore_recipe_servings' ) ) :
+	function bootscore_recipe_servings() {
 
 		// Bail  if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
@@ -119,7 +119,7 @@ endif;
  *
  * @return void
  */
-function sweet_recipes_navbar_brand() {
+function bootscore_navbar_brand() {
 	$custom_logo_id = get_theme_mod('custom_logo');
 	$logo = wp_get_attachment_image_src($custom_logo_id, 'full');
 
@@ -132,8 +132,8 @@ function sweet_recipes_navbar_brand() {
 
 
 
-if (!function_exists('sweet_recipes_gallery')) {
-	function sweet_recipes_gallery() {
+if (!function_exists('bootscore_recipe_gallery')) {
+	function bootscore_recipe_gallery() {
 		// bail if ACF is not installed/activated, as we won't have a movie gallery to show anyway 😝
 		if (!function_exists('get_field')) {
 			return;
@@ -160,8 +160,8 @@ if (!function_exists('sweet_recipes_gallery')) {
 }
 
 // Photo
-if (!function_exists('sweet_recipes_image')) {
-	function sweet_recipes_image() {
+if (!function_exists('bootscore_recipe_image')) {
+	function bootscore_recipe_image() {
 		// bail if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
 			return;
@@ -182,8 +182,8 @@ if (!function_exists('sweet_recipes_image')) {
 // Photo End
 
 // Ingridients
-if (!function_exists('sweet_recipes_ingredients_details')) {
-	function sweet_recipes_ingredients_details() {
+if (!function_exists('bootscore_recipe_ingredients_details')) {
+	function bootscore_recipe_ingredients_details() {
 		// bail if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
 			return;
@@ -211,8 +211,8 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 // Ingredients End
 
 // Notes for Recipes
-if (!function_exists('sweet_recipes_notes')) {
-	function sweet_recipes_notes() {
+if (!function_exists('bootscore_recipe_notes')) {
+	function bootscore_recipe_notes() {
 		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
 		if (!function_exists('get_field')) {
 			return;
@@ -237,8 +237,9 @@ if (!function_exists('sweet_recipes_notes')) {
 // Notes End
 
 
-if ( ! function_exists( 'sweet_recipes_all_categories' ) ) :
-	function sweet_recipes_all_categories() {
+// Lists of all Categories on the whole site.
+if ( ! function_exists( 'bootscore_all_categories' ) ) :
+	function bootscore_all_categories() {
 
 		// Bail  if ACF is not installed/activated.
 		if (!function_exists('get_field')) {
@@ -269,14 +270,13 @@ if ( ! function_exists( 'sweet_recipes_all_categories' ) ) :
 
 		// output badges with a space between them
 		echo implode(' • ', $badges);
-
-
 	}
 endif;
+// End
 
 // Category Badge For Archive
-if ( ! function_exists( 'sweet_recipes_categories_badge' ) ) :
-	function sweet_recipes_categories_badge() {
+if ( ! function_exists( 'bootscore_categories_badge' ) ) :
+	function bootscore_categories_badge() {
 		// get all movie genres for the current post
 		$categories = get_the_terms(get_the_ID(), 'bs_recipie_category');
 
@@ -294,7 +294,6 @@ if ( ! function_exists( 'sweet_recipes_categories_badge' ) ) :
 			$category_url = get_term_link($category, 'bs_recipie_category');
 
 			// Create anchor link
-
 			$category= sprintf(
 				'<a href="%s" class="badge bg-info mt-2">%s</a>',
 				$category_url,
@@ -315,8 +314,8 @@ endif;
 
 
 // Category Links
-if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
-	function sweet_recipes_categories_links() {
+if ( ! function_exists( 'bootscore_categories_links' ) ) :
+	function bootscore_categories_links() {
 		// get all movie genres for the current post
 		$categories = get_the_terms(get_the_ID(), 'bs_recipie_category');
 
@@ -335,7 +334,7 @@ if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
 
 			// Create anchor link
 			$category= sprintf(
-				'<span class="divider">&nbsp;/&nbsp;<a href="%s">%s</a></span>',
+				'<a href="%s">%s</a></span>',
 				$category_url,
 				$category->name
 			);
@@ -356,8 +355,8 @@ endif;
 
 
 // Instructions
-if (!function_exists('sweet_recipes_instructions')) {
-	function sweet_recipes_instructions() {
+if (!function_exists('bootscore_recipe_instructions')) {
+	function bootscore_recipe_instructions() {
 		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
 		if (!function_exists('get_field')) {
 			return;

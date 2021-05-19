@@ -2,7 +2,7 @@
 	<a href="<?php the_permalink(); ?>">
 
 		<?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
-		<?php sweet_recipes_categories_badge(); ?>
+		<?php bootscore_categories_badge(); ?>
 
 		<div class="card-body">
 			<h4 class="blog-post-title">

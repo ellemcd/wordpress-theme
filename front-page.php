@@ -41,7 +41,7 @@ get_header();
 
 					<p class="entry-meta text-center">
 						<small class="text-muted">
-							<?php sweet_recipes_all_categories(); ?>
+							<?php bootscore_all_categories(); ?>
 						</small>
 					</p>
 
