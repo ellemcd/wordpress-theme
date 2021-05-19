@@ -302,11 +302,12 @@ if ( ! function_exists( 'bootscore_categories_links' ) ) :
 
 		$categorylinks = [];
 
+		echo esc_html__( 'Categories:', 'bootscore' );
 		foreach ($categories as $category) {
 
 			$url = get_term_link($category, 'bs_recipie_category');
 			$category = sprintf(
-				'<a href="%s">%s</a></span>',
+				'<a href="%s"> %s</a></span>',
 				$url,
 				$category->name
 			);
@@ -332,11 +333,14 @@ if ( ! function_exists( 'bootscore_tags_links' ) ) :
 
 		$links = [];
 
+
+		echo esc_html__( 'Tags:', 'bootscore' );
 		foreach ($tags as $tags) {
 
 			$url = get_term_link($tags, 'bs_recipie_tags');
+
 			$tags = sprintf(
-				'<a href="%s">#%s</a></span>',
+				'<a class="tags" href="%s"> #%s</a>',
 				$url,
 				$tags->name
 			);

@@ -42,12 +42,9 @@
 
                     <p class="entry-meta">
                         <small class="text-muted">
-							<?php _e('Categories:','bootscore') ?>
 							<?php bootscore_categories_links(); ?>
 							<br>
-							<?php _e('Tags:','bootscore') ?>
 							<?php bootscore_tags_links(); ?>
-
                         </small>
                     </p>
 

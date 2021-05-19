@@ -11931,6 +11931,9 @@ Custom checkboxes, radios, range, and select on Mac/iOS Safari if custom Sass co
 .single-page dt {
   font-size: 1.4rem;
 }
+.single-page .tags {
+  text-transform: lowercase;
+}
 
 .frontpage-header {
   background-repeat: no-repeat;
