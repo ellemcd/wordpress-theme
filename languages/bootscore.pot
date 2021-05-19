@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-05-18T15:44:52+00:00\n"
+"POT-Creation-Date: 2021-05-19T19:35:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: bootscore\n"
@@ -46,7 +46,6 @@ msgstr ""
 #: category.php:61
 #: index.php:78
 #: index.php:134
-#: taxonomy-bs_recipie_tags.php:65
 #: template-parts/content-search.php:42
 #: unused-template-files/archive-equal-height-sidebar-right.php:62
 #: unused-template-files/archive-equal-height.php:63
@@ -98,7 +97,7 @@ msgstr ""
 
 #. translators: %s: post title
 #: comments.php:98
-#: inc/template-tags.php:453
+#: inc/template-tags.php:499
 msgid "Leave a Comment"
 msgstr ""
 
@@ -218,7 +217,7 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #: inc/comment-list.php:32
 #: inc/comment-list.php:57
-#: inc/template-tags.php:482
+#: inc/template-tags.php:528
 msgid "Edit"
 msgstr ""
 
@@ -258,9 +257,6 @@ msgid "All Recipes"
 msgstr ""
 
 #: inc/custom-post-types.php:12
-msgid "Add new"
-msgstr ""
-
 #: inc/custom-post-types.php:13
 msgid "Add a new Recipe"
 msgstr ""
@@ -538,50 +534,78 @@ msgstr ""
 msgid "%s mins"
 msgstr ""
 
+#: inc/template-tags.php:37
+msgid "<dl><dd class=\"mb-0\">Prep Time:</dd><dt>-</dt></dl>"
+msgstr ""
+
 #: inc/template-tags.php:66
 msgid "<dl><dd class=\"mb-0\">Cooking Time:</dd><dt>%s</dt></dl>"
+msgstr ""
+
+#: inc/template-tags.php:73
+msgid "<dl><dd class=\"mb-0\">Cooking Time:</dd><dt>-</dt></dl>"
 msgstr ""
 
 #: inc/template-tags.php:104
 msgid "%s servings"
 msgstr ""
 
+#: inc/template-tags.php:180
+msgid "Ingredients"
+msgstr ""
+
+#: inc/template-tags.php:210
+msgid "Notes"
+msgstr ""
+
+#: inc/template-tags.php:305
+msgid "Categories:"
+msgstr ""
+
+#: inc/template-tags.php:337
+msgid "Tags:"
+msgstr ""
+
+#: inc/template-tags.php:371
+msgid "Instructions"
+msgstr ""
+
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:381
+#: inc/template-tags.php:427
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:428
+#: inc/template-tags.php:474
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:510
+#: inc/template-tags.php:556
 msgid "Leave a comment"
 msgstr ""
 
 #. translators: 1: list of tags.
-#: inc/template-tags.php:534
+#: inc/template-tags.php:580
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:599
+#: inc/template-tags.php:645
 msgid "Internet Explorer detected"
 msgstr ""
 
-#: inc/template-tags.php:600
+#: inc/template-tags.php:646
 msgid "This website will offer limited functionality in this browser."
 msgstr ""
 
-#: inc/template-tags.php:601
+#: inc/template-tags.php:647
 msgid "Please use a modern and secure web browser like"
 msgstr ""
 
-#: inc/template-tags.php:601
+#: inc/template-tags.php:647
 msgid "or"
 msgstr ""
 
-#: inc/template-tags.php:601
+#: inc/template-tags.php:647
 msgid "to display this site correctly."
 msgstr ""
 
@@ -633,34 +657,13 @@ msgstr ""
 msgid "Right Sidebar"
 msgstr ""
 
-#. translators: %s: search query.
-#: search.php:29
-msgid "Search Results for: %s"
-msgstr ""
-
-#: searchform.php:3
-msgid "Search"
-msgstr ""
-
 #. Template Name of the theme
 msgid "Full width image"
 msgstr ""
 
-#: single-bs_recipie.php:46
-msgid "Categories:"
-msgstr ""
-
-#: single-bs_recipie.php:66
-msgid "Ingredients"
-msgstr ""
-
-#: single-bs_recipie.php:72
-msgid "Instructions"
-msgstr ""
-
-#: single-full-width-image.php:38
-#: single-sidebar-left.php:31
-#: single-sidebar-none.php:28
+#: single-page-templates/single-full-width-image.php:38
+#: single-page-templates/single-sidebar-left.php:31
+#: single-page-templates/single-sidebar-none.php:28
 #: single.php:29
 msgid " by "
 msgstr ""
@@ -692,4 +695,13 @@ msgstr ""
 
 #: unused-template-files/author.php:72
 msgid "Read more"
+msgstr ""
+
+#. translators: %s: search query.
+#: unused-template-files/search.php:29
+msgid "Search Results for: %s"
+msgstr ""
+
+#: unused-template-files/searchform.php:3
+msgid "Search"
 msgstr ""
