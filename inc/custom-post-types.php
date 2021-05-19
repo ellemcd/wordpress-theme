@@ -1,4 +1,4 @@
-<?php function cptui_register_my_cpts_bs_recipie() {
+<?php function cptui_register_my_cpts() {
 
 /**
  * Post Type: Recipes.
@@ -9,7 +9,7 @@ $labels = [
 	"singular_name" => __( "Recipe", "bootscore" ),
 	"menu_name" => __( "My Recipes", "bootscore" ),
 	"all_items" => __( "All Recipes", "bootscore" ),
-	"add_new" => __( "Add new", "bootscore" ),
+	"add_new" => __( "Add a new Recipe", "bootscore" ),
 	"add_new_item" => __( "Add a new Recipe", "bootscore" ),
 	"edit_item" => __( "Edit Recipe", "bootscore" ),
 	"new_item" => __( "New Recipe", "bootscore" ),
@@ -68,4 +68,4 @@ $args = [
 register_post_type( "bs_recipie", $args );
 }
 
-add_action( 'init', 'cptui_register_my_cpts_bs_recipie' );
+add_action( 'init', 'cptui_register_my_cpts' );
