@@ -60,24 +60,26 @@
 
 						<div class="row">
 							<div class="col-6">
-						<?php if (empty(sweet_recipes_image())): ?>
+								<?php if (empty(sweet_recipes_image())): ?>
 							</div>
 							<div class="col-6 align-self-center">
-								<h4 class="border-bottom border-4 border-info"><?php _e('Ingredients','bootscore')?></h4>
-									<?php sweet_recipes_ingredients_details(); ?>
+								<?php sweet_recipes_ingredients_details(); ?>
 							</div>
 						</div>
+						<?php endif; ?>
+
 						<div class="row flex-row-reverse">
-							<div class="col-sm-12 col-md-6">
-								<h4 class="border-bottom border-4 border-warning mt-2"><?php _e('Instructions','bootscore')?></h4>
-										<?php sweet_recipes_instructions(); ?>
+							<div class="col-sm-12 col-md-6 mb-4">
+								<?php sweet_recipes_instructions(); ?>
 							</div>
+
+							<div class="col-sm-12 col-md-6 align-self-center">
+								<?php if(empty(sweet_recipes_notes())): ?><?php endif;  ?>
+							</div>
+
 						</div>
 
-
-					<?php endif; ?>
-
-
+						<!-- Gallery -->
 						<?php sweet_recipes_gallery(); ?>
 
                 </div>

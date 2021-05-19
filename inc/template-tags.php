@@ -189,10 +189,10 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 			return;
 		}
 
-
 		if (have_rows('ingredients-details')) {
 			// yes we have at least one row of sub-fields to show!
 
+			echo '<h4 class="border-bottom border-4 border-info">' . esc_html__( 'Ingredients', 'bootscore' ) . '</h4>';
 			echo'<ul class="recipes-ingredients list-group list-group-flush mb-4">';
 			while (have_rows('ingredients-details')) {
 				the_row();
@@ -209,6 +209,32 @@ if (!function_exists('sweet_recipes_ingredients_details')) {
 }
 
 // Ingredients End
+
+// Notes for Recipes
+if (!function_exists('sweet_recipes_notes')) {
+	function sweet_recipes_notes() {
+		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		if (have_rows('recipe-notes')) {
+			// yes we have at least one row of sub-fields to show!
+
+			echo '<h4 class="border-bottom border-4 border-primary">' . esc_html__( 'Notes', 'bootscore' ) . '</h4>';
+			echo'<ul class="recipes-notes list-group mb-4">';
+			while (have_rows('recipe-notes')) {
+				the_row();
+
+				$notes = get_sub_field('note');
+				printf('<li class="list-group-item">%s</li> ', $notes);
+			}
+			echo '</ul>';
+
+		}
+	}
+}
+// Notes End
 
 
 if ( ! function_exists( 'sweet_recipes_all_categories' ) ) :
@@ -326,6 +352,9 @@ if ( ! function_exists( 'sweet_recipes_categories_links' ) ) :
 endif;
 // Category Links End
 
+
+
+
 // Instructions
 if (!function_exists('sweet_recipes_instructions')) {
 	function sweet_recipes_instructions() {
@@ -337,6 +366,7 @@ if (!function_exists('sweet_recipes_instructions')) {
 		if (have_rows('recipe-instructions')) {
 			// yes we have at least one row of sub-fields to show!
 
+			echo '<h4 class="border-bottom border-4 border-info">' . esc_html__( 'Instructions', 'bootscore' ) . '</h4>';
 			echo '<ol class="recipe-instructions" style="text-align: justify;">';
 			while (have_rows('recipe-instructions')) {
 				the_row();
