@@ -30,25 +30,7 @@ get_header();
 						<?php if (have_posts()) : ?>
 							<?php while (have_posts()) : the_post(); ?>
 								<div class="col-md-12 col-lg-6 col-xxl-4 mb-2">
-									<div class="card">
-										<a href="<?php the_permalink(); ?>">
-
-											<?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
-											<?php sweet_recipes_categories_badge(); ?>
-
-											<div class="card-body">
-												<h4 class="blog-post-title">
-													<a href="<?php the_permalink(); ?>">
-														<?php the_title(); ?>
-													</a>
-												</h4>
-												<div class="card-text">
-													<?php the_excerpt(); ?>
-												</div>
-											</div>
-										</a>
-
-									</div><!-- card -->
+									<?php get_template_part('template-parts/content-cards'); ?>
 								</div><!-- col -->
 							<?php endwhile; ?>
 						<?php endif; ?>
