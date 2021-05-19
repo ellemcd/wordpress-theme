@@ -60,13 +60,12 @@
 
 						<div class="row">
 							<div class="col-6">
-								<?php if (empty(sweet_recipes_image())): ?>
+								<?php if (empty(sweet_recipes_image())): ?>  <?php endif; ?>
 							</div>
 							<div class="col-6 align-self-center">
 								<?php sweet_recipes_ingredients_details(); ?>
 							</div>
 						</div>
-						<?php endif; ?>
 
 						<div class="row flex-row-reverse">
 							<div class="col-sm-12 col-md-6 mb-4">
