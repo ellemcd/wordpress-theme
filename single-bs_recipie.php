@@ -67,14 +67,17 @@
 							</div>
 						</div>
 
-						<div class="row flex-row-reverse">
+						<div class="row">
+
 							<div class="col-sm-12 col-md-6 mb-4">
 								<?php bootscore_recipe_instructions(); ?>
 							</div>
 
 							<div class="col-sm-12 col-md-6 align-self-center">
-								<?php if(empty(bootscore_recipe_notes())): ?><?php endif;  ?>
+								<?php bootscore_recipe_notes(); ?>
 							</div>
+
+
 
 						</div>
 
