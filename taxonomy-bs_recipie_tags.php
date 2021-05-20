@@ -22,7 +22,7 @@ get_header();
 				<main id="main" class="site-main">
 
 				<header class="page-header mb-4">
-				<h1><?php single_cat_title(); ?></h1>
+				<h1>#<?php single_cat_title(); ?></h1>
 
 				</header>
 
