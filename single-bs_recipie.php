@@ -73,7 +73,7 @@
 								<?php bootscore_recipe_instructions(); ?>
 							</div>
 
-							<div class="col-sm-12 col-md-6 align-self-center">
+							<div class="col-sm-12 col-md-6">
 								<?php bootscore_recipe_notes(); ?>
 							</div>
 

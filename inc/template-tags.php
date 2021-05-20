@@ -177,7 +177,7 @@ if (!function_exists('bootscore_recipe_ingredients_details')) {
 
 		if (have_rows('ingredients-details')) {
 
-			echo '<h4 class="border-bottom border-4 border-info">' . esc_html__( 'Ingredients', 'bootscore' ) . '</h4>';
+			echo '<h4 class="border-bottom border-4 border-warning">' . esc_html__( 'Ingredients', 'bootscore' ) . '</h4>';
 			echo'<ul class="recipes-ingredients list-group list-group-flush mb-4">';
 
 			while (have_rows('ingredients-details')) {
