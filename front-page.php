@@ -10,7 +10,7 @@
 
 $args = array(
 	'post_type' => 'bs_recipie',
-	'posts_per_page' => 9,
+	'posts_per_page' => 8,
 );
 
 $the_query = new WP_Query( $args );
